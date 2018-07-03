@@ -1,0 +1,19 @@
+nav {
+  background: #272727;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        color: #ff652f;
+        padding: 14px;
+        display: block;
+        font-size: 34px;
+        text-shadow: 2px 2px 4px #747474;
+      }
+    }
+  }
+}

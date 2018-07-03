@@ -1,0 +1,19 @@
+nav {
+  background: #272727;
+  height: 800px;
+  float: right;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        color: #ff652f;
+        padding: 22px;
+        display: block;
+      }
+    }
+  }
+}

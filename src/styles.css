@@ -1,0 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html {
+  background: #747474;
+  font-family: "Montserrat", sans-serif;
+}
