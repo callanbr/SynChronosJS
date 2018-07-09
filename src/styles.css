@@ -1,5 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "../node_modules/flatpickr/dist/flatpickr.min.css";
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 html {
-  background: #747474;
+  background-color: (#e2e2e2);
   font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100%;
 }

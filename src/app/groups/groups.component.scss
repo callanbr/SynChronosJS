@@ -1,18 +1,23 @@
-span {
-  background: #272727;
-  height: 800px;
+body {
+  position: absolute;
+  height: 100%;
+  background: #535353;
   float: left;
 
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    height: inherit;
 
     li {
       a {
         color: #ff652f;
         padding: 30px;
         display: block;
+      }
+      a:hover {
+        background-color: #3564ff;
       }
     }
   }
