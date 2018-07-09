@@ -12,8 +12,18 @@ import { NavComponent } from "./nav/nav.component";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from ".//app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { GroupsComponent } from './groups/groups.component';
+import { SidenavComponent } from "./sidenav/sidenav.component";
+import { GroupsComponent } from "./groups/groups.component";
+
+import "flatpickr/dist/flatpickr.css";
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { FlatpickrModule } from "angularx-flatpickr";
+import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
+
+import { CommonModule } from "@angular/common";
+import { CalendarModule } from "angular-calendar";
 
 @NgModule({
   declarations: [
@@ -28,7 +38,18 @@ import { GroupsComponent } from './groups/groups.component';
     SidenavComponent,
     GroupsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+
+  imports: [
+    BrowserAnimationsModule,
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgbModalModule.forRoot(),
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot()
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
