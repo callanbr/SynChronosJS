@@ -1,34 +1,43 @@
-<nav>
-  <ul>
-    <li>
-      <a routerLink='profile' [class.activated]="currentUrl == '/profile'" title="Profile">
-        <i class='material-icons'>supervised_user_circle</i>
+<!DOCTYPE html>
+<html>
 
-      </a>
-    </li>
-    <li>
-      <a routerLink='calendar' [class.activated]="currentUrl == '/calendar'" title="Calendar">
-        <i class='material-icons'>event</i>
+<body>
 
-      </a>
-    </li>
-    <li>
-      <a routerLink='events' [class.activated]="currentUrl == '/events'" title="Events">
-        <i class='material-icons'>schedule</i>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink='profile' [class.activated]="currentUrl == '/profile'" title="Profile">
+          <i class='material-icons'>supervised_user_circle</i>
 
-      </a>
-    </li>
-    <li>
-      <a routerLink='photos' [class.activated]="currentUrl == '/photos'" title="Photos">
-        <i class='material-icons'>photo</i>
+        </a>
+      </li>
+      <li>
+        <a routerLink='calendar' [class.activated]="currentUrl == '/calendar'" title="Calendar">
+          <i class='material-icons'>event</i>
 
-      </a>
-    </li>
-    <li>
-      <a routerLink='settings' [class.activated]="currentUrl == '/settings'" title="Settings">
-        <i class='material-icons'>settings</i>
+        </a>
+      </li>
+      <li>
+        <a routerLink='events' [class.activated]="currentUrl == '/events'" title="Events">
+          <i class='material-icons'>schedule</i>
 
-      </a>
-    </li>
-  </ul>
-</nav>
+        </a>
+      </li>
+      <li>
+        <a routerLink='photos' [class.activated]="currentUrl == '/photos'" title="Photos">
+          <i class='material-icons'>photo</i>
+
+        </a>
+      </li>
+      <li>
+        <a routerLink='settings' [class.activated]="currentUrl == '/settings'" title="Settings">
+          <i class='material-icons'>settings</i>
+
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+
+</html>

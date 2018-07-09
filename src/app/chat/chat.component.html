@@ -1,10 +1,84 @@
+<!DoctypeHTML>
 <html>
 
 <body>
-  <div>
-    <h1>This is for chatting!</h1>
+
+
+  <div id="chatAll">
+
+
+    <div id="chatBody">
+      <!-- <textbox *ngFor="let chat of chats" placeholder="Click submit to see your words here">{{chat.user}}: {{chat.message}}</textbox> -->
+      <!-- <div class="USERSONLINE" id="usersOnline"> Availble users / friends -->
+      <!-- Friends list with button feature -->
+
+      <div *ngFor="let chat of chats" class="list-group">
+        <div> {{chat.user}}:
+          <span id="timestamp">3 days ago</span>
+
+          <p id="chatMessage">{{chat.message}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
+
+
 </body>
+<footer>
+
+  <div class="input-group mb-3" id="sendMessage">
+
+    <input (keyup.enter)="submitChat()" (keyup.enter)="document.getElementById('message').value = ''" type="text" id="message"
+      class="form-control" [(ngModel)]="currentChat.message" placeholder="message" aria-label="" aria-describedby="basic-addon1">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+    </div>
+  </div>
+</footer>
 
 </html>
+
+
+
+
+
+
+<!-- <small>Donec id elit non mi porta.</small> -->
+<!-- </a> -->
+
+<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </a> -->
+<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </a> -->
+<!-- </div> -->
+
+<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List of groups and friends</h5>
+      <small class="text-muted"> last online 3 days ago</small>
+    </div>
+    <p class="mb-1">
+    </p>
+    <small class="text-muted">Donec id elit non mi porta.</small>
+  </a> -->
+
+
+<!-- <div class "MG-BOX" id="mg-box">
+      </div> -->
+
+
+
+<!-- singlelne textbar with submit button -->

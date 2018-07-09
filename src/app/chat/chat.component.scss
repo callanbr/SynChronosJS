@@ -1,0 +1,55 @@
+html {
+  padding-right: 68px;
+  background-color: (#e2e2e2);
+  padding-bottom: 55px;
+  height: 100%;
+}
+#chatAll {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 87vh;
+  background-color: (#e2e2e2);
+}
+
+#chatBody {
+  padding-left: 28%;
+  padding-top: 10px;
+  padding-right: 15%;
+  overflow-y: scroll;
+  width: 96%;
+  height: 100%;
+}
+.list-group {
+  border: solid;
+  border-radius: 20px;
+  padding: 9px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  width: 92%;
+  background-color: #3564ff25;
+  span {
+    font-size: 11px;
+  }
+}
+#chatMessage {
+  font-size: 16px;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-right: 68px;
+  background-color: (#535353);
+}
+#sendMessage {
+  padding-left: 84px;
+}
+
+// position: absolute;

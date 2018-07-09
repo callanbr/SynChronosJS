@@ -1,18 +1,28 @@
-nav {
-  background: #272727;
-  height: 800px;
+body {
   float: right;
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  nav {
+    background: #535353;
+    position: absolute;
+    height: 100%;
+    float: inherit;
+    margin-inline-start: -68px;
 
-    li {
-      a {
-        color: #ff652f;
-        padding: 22px;
-        display: block;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      height: inherit;
+
+      li {
+        a {
+          color: #ff652f;
+          padding: 22px;
+          display: block;
+        }
+        a:hover {
+          background-color: #3564ff;
+        }
       }
     }
   }

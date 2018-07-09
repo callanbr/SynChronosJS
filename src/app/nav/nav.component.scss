@@ -1,5 +1,5 @@
 nav {
-  background: #272727;
+  background: #535353;
 
   ul {
     list-style-type: none;
@@ -9,11 +9,14 @@ nav {
     li {
       a {
         color: #ff652f;
-        padding: 14px;
+        text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
+        padding: 15px 0px 15px 21px;
         display: block;
-        font-size: 34px;
-        text-shadow: 2px 2px 4px #747474;
+        font-size: 36px;
       }
     }
   }
 }
+
+// color: #e2e2e2;
+//         text-shadow: 1px 1px 2px #353535, 0 0 35px #ff652f, 0 0 5px #353535;
