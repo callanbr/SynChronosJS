@@ -28,9 +28,9 @@
 <footer>
 
   <div class="input-group mb-3" id="sendMessage">
-
-    <input (keyup.enter)="submitChat()" (keyup.enter)="document.getElementById('message').value = ''" type="text" id="message"
-      class="form-control" [(ngModel)]="currentChat.message" placeholder="message" aria-label="" aria-describedby="basic-addon1">
+    <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
+    <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="message"
+      aria-label="" aria-describedby="basic-addon1">
     <div class="input-group-prepend">
       <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
     </div>

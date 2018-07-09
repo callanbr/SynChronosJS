@@ -49,19 +49,27 @@ export class ChatComponent implements OnInit {
     });
   }
   submitChat() {
-    this.chatService.addChat(this.currentChat).subscribe();
+    this.chatService.addChat(this.currentChat).subscribe(() => {
+      this.getChat();
+    });
   }
 
   ngOnInit() {
     this.getChat();
-
-    console.log(this.chats);
   }
 }
 
 document.addEventListener("keyup", function(e) {
-  if (e.keyCode == 13) window.location.reload();
+  if (e.keyCode == 13)
+    // window.location.reload();
+    document.getElementById("message").value = "";
 });
+
+// document.addEventListener("keyup", function(e) {
+//   if (e.keyCode == 13)
+//   var objDiv = document.getElementById("chatBody");
+//   objDiv.scrollTop = objDiv.scrollHeight;
+// };
 
 window.onload = function() {
   var objDiv = document.getElementById("chatBody");
