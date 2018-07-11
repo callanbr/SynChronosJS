@@ -13,13 +13,20 @@ export class ProfileComponent implements OnInit {
 
   profile: Profile;
 
-  submitProfile() {
-    this.profileService.addProfile(this.currentProfile).subscribe();
+  getProfile() {
+    this.profileService.getProfile().subscribe(p => {
+      this.profile = p;
+    });
   }
+  submitProfile() {
+    //event.preventDefault();
+    // let fnameElement = document.getElementById("firstName");
+    //let fname = form.firstName.value;
+    //console.log("fname", fname);
 
-  ngOnInit() {
-    this.submitProfile();
+    this.profileService.addProfile(this.currentProfile).subscribe();
     console.log(this.profile);
   }
-}
 
+  ngOnInit() {}
+}
