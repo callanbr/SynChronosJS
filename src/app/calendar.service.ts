@@ -5,8 +5,16 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class CalendarService {
-  addList(name: object) {
-    return this.http.post("http://localhost:8080/calendar", name);
+  addList(calendar: object) {
+    return this.http.post("http://localhost:8080/calendar", calendar);
+  }
+
+  addEvent(calendar: Object) {
+    return this.http.post("http://localhost:8080/calendar", calendar);
+  }
+
+  getEvents() {
+    return this.http.get("http://localhost:8080/calendar");
   }
 
   constructor(private http: HttpClient) {}
