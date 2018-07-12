@@ -7,7 +7,7 @@
   <div id="chatAll">
 
 
-    <div [@myStagger]="chat" id="chatBody">
+    <div [@myStagger]="chats" id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <div *ngFor="let chat of chats" class="list-group">
         <div> {{chat.user}}:
           <span id="timestamp">3 days ago</span>

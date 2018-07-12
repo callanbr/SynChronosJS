@@ -24,6 +24,7 @@ import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
+import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CalendarModule } from "angular-calendar";
     EventsComponent,
     NavComponent,
     SidenavComponent,
-    GroupsComponent
+    GroupsComponent,
+    MainprofileComponent
   ],
 
   imports: [

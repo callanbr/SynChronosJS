@@ -22,7 +22,7 @@ import {
           [
             style({ opacity: 0, transform: "translateY(-15px)" }),
             stagger(
-              "100ms",
+              "5ms",
               animate(
                 "600ms ease-out",
                 style({ opacity: 1, transform: "translateY(0px)" })
@@ -31,7 +31,7 @@ import {
           ],
           { optional: true }
         ),
-        query(":leave", animate("100ms", style({ opacity: 0 })), {
+        query(":leave", animate("10ms", style({ opacity: 0 })), {
           optional: true
         })
       ])
@@ -51,6 +51,7 @@ export class ChatComponent implements OnInit {
   submitChat() {
     this.chatService.addChat(this.currentChat).subscribe(() => {
       this.getChat();
+      this.currentChat = new Chat();
     });
   }
 
@@ -58,21 +59,3 @@ export class ChatComponent implements OnInit {
     this.getChat();
   }
 }
-// window.onload = function() {
-//   var chatBody = document.getElementById("chatBody");
-//   chatBody.scrollTop = chatBody.scrollHeight;
-// };
-// var inputValue = ((<HTMLInputElement>document.getElementById("message")).value =
-//   "");
-
-document.addEventListener("keyup", function(e) {
-  if (e.keyCode == 13) document.getElementById("message").value = "";
-  var chatBody = document.getElementById("chatBody");
-  chatBody.scrollTop = chatBody.scrollHeight;
-});
-
-// document.addEventListener("keyup", function(e) {
-//   if (e.keyCode == 13)
-//   var objDiv = document.getElementById("chatBody");
-//   objDiv.scrollTop = objDiv.scrollHeight;
-// };

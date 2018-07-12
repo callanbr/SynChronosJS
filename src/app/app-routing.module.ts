@@ -8,6 +8,7 @@ import { ChatComponent } from "./chat/chat.component";
 import { PhotosComponent } from "./photos/photos.component";
 import { EventsComponent } from "./events/events.component";
 import { NavComponent } from "./nav/nav.component";
+import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "chat", component: ChatComponent },
   { path: "photos", component: PhotosComponent },
   { path: "events", component: EventsComponent },
-  { path: "profile", component: ProfileComponent }
+  { path: "profile", component: ProfileComponent },
+  { path: "mainprofile", component: MainprofileComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
