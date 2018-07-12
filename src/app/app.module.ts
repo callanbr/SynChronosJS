@@ -25,6 +25,7 @@ import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
     NavComponent,
     SidenavComponent,
     GroupsComponent,
-    MainprofileComponent
+    MainprofileComponent,
+    SettingsComponent
   ],
 
   imports: [

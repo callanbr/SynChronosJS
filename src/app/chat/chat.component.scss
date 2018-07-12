@@ -19,6 +19,20 @@ html {
   // overflow-y: scroll;
   width: 100%;
 }
+#username {
+  font-size: 16px;
+  margin-right: 10px;
+}
+#timestamp {
+  font-size: 10px;
+}
+#userimg {
+  border: solid 3px;
+  border-radius: 25%;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
 .list-group {
   border-top: solid 1px;
   border-bottom: solid 1px;
@@ -37,7 +51,8 @@ html {
 }
 #chatMessage {
   font-size: 16px;
-  margin-left: 20px;
+  margin-left: 70px;
+  margin-top: -10px;
   word-wrap: break-word;
 }
 

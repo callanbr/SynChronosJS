@@ -20,11 +20,11 @@ import {
         query(
           ":enter",
           [
-            style({ opacity: 0, transform: "translateY(-15px)" }),
+            style({ opacity: 0, transform: "translateY(-10px)" }),
             stagger(
               "5ms",
               animate(
-                "600ms ease-out",
+                "1000ms ease-out",
                 style({ opacity: 1, transform: "translateY(0px)" })
               )
             )
@@ -58,4 +58,11 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.getChat();
   }
+}
+
+setTimeout(printSomething, 1000);
+
+function printSomething() {
+  for (var i = 0; i < 10; i++) {}
+  window.scrollTo(0, document.body.scrollHeight);
 }
