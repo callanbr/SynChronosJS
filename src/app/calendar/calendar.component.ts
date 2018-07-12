@@ -2,7 +2,8 @@ import {
   Component,
   ViewChild,
   ChangeDetectionStrategy,
-  TemplateRef
+  TemplateRef,
+  OnInit
 } from "@angular/core";
 
 import {
@@ -23,6 +24,7 @@ import {
   CalendarEventTimesChangedEvent
 } from "angular-calendar";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap/modal/modal";
+import { CalendarService } from "../calendar.service";
 
 const colors: any = {
   red: {
@@ -45,7 +47,9 @@ const colors: any = {
   templateUrl: "./calendar.component.html",
   styleUrls: ["./calendar.component.css"]
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
+  // constructor(private calendarService: CalendarService) {}
+
   @ViewChild("modalContent") modalContent: TemplateRef<any>;
   view: string = "month";
 
@@ -110,7 +114,11 @@ export class CalendarComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(
+    private modal: NgbModal,
+    private calendarService: CalendarService
+  ) {}
+  // constructor(private calendarService: CalendarService) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -155,5 +163,15 @@ export class CalendarComponent {
       }
     });
     this.refresh.next();
+  }
+
+  ngOnInit() {
+    this.calendarService.getEvents().subscribe(data => {
+      this.events = data.map(d =>
+        Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
+      );
+      this.refresh.next();
+    });
+    this.addEvent();
   }
 }
