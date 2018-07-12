@@ -15,7 +15,7 @@ import {
   templateUrl: "./chat.component.html",
   styleUrls: ["./chat.component.scss"],
   animations: [
-    trigger("listStagger", [
+    trigger("myStagger", [
       transition("* <=> *", [
         query(
           ":enter",
@@ -58,11 +58,17 @@ export class ChatComponent implements OnInit {
     this.getChat();
   }
 }
+// window.onload = function() {
+//   var chatBody = document.getElementById("chatBody");
+//   chatBody.scrollTop = chatBody.scrollHeight;
+// };
+// var inputValue = ((<HTMLInputElement>document.getElementById("message")).value =
+//   "");
 
 document.addEventListener("keyup", function(e) {
-  if (e.keyCode == 13)
-    // window.location.reload();
-    document.getElementById("message").value = "";
+  if (e.keyCode == 13) document.getElementById("message").value = "";
+  var chatBody = document.getElementById("chatBody");
+  chatBody.scrollTop = chatBody.scrollHeight;
 });
 
 // document.addEventListener("keyup", function(e) {
@@ -70,8 +76,3 @@ document.addEventListener("keyup", function(e) {
 //   var objDiv = document.getElementById("chatBody");
 //   objDiv.scrollTop = objDiv.scrollHeight;
 // };
-
-window.onload = function() {
-  var objDiv = document.getElementById("chatBody");
-  objDiv.scrollTop = objDiv.scrollHeight;
-};

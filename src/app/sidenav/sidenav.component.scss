@@ -3,10 +3,12 @@ body {
 
   nav {
     background: #535353;
-    position: absolute;
+    width: 80px;
+    position: fixed;
     height: 100%;
     float: inherit;
-    margin-inline-start: -68px;
+    margin-inline-start: -69px;
+    margin-top: 71px;
 
     ul {
       list-style-type: none;

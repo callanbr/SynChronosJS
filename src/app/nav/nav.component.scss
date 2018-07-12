@@ -1,5 +1,8 @@
 nav {
   background: #535353;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 
   ul {
     list-style-type: none;
