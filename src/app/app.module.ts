@@ -25,7 +25,25 @@ import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsComponent } from "./settings/settings.component";
+import { loginComponent } from "./login/login.component";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from "angular5-social-login";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(
+        "157286943979-ovd6986gl60f6qu2smogs0ddmrrtbusd.apps.googleusercontent.com"
+      )
+    }
+  ]);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -40,7 +58,8 @@ import { SettingsComponent } from './settings/settings.component';
     SidenavComponent,
     GroupsComponent,
     MainprofileComponent,
-    SettingsComponent
+    SettingsComponent,
+    loginComponent
   ],
 
   imports: [
@@ -52,9 +71,15 @@ import { SettingsComponent } from './settings/settings.component';
     HttpClientModule,
     NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
