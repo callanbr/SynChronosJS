@@ -63,7 +63,7 @@ export function getAuthServiceConfigs() {
     GroupsComponent,
     DetailsPhotosComponent,
     FormPhotosComponent,
-    ListPhotosComponent
+    ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
     loginComponent
@@ -88,7 +88,6 @@ export function getAuthServiceConfigs() {
       useFactory: getAuthServiceConfigs
     }
   ],
- 
 
   bootstrap: [AppComponent]
 })
