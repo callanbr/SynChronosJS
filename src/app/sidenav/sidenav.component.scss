@@ -2,11 +2,13 @@ body {
   float: right;
 
   nav {
-    background: #535353;
-    position: absolute;
+    background: #313131;
+    width: 70px;
+    position: fixed;
     height: 100%;
     float: inherit;
-    margin-inline-start: -68px;
+    margin-inline-start: -69px;
+    margin-top: 82px;
 
     ul {
       list-style-type: none;
@@ -16,12 +18,18 @@ body {
 
       li {
         a {
-          color: #ff652f;
+          color: rgb(253, 202, 71);
           padding: 22px;
           display: block;
+          // border-radius: 10%;
+          // border: 2px solid transparent;
         }
         a:hover {
-          background-color: #3564ff;
+          background-color: rgba(0, 204, 255, 0.288);
+          border-radius: 20%;
+          // border: 1px groove;
+          // border-color: rgb(253, 202, 71);
+          // #3564ff;
         }
       }
     }

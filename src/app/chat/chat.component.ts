@@ -15,23 +15,23 @@ import {
   templateUrl: "./chat.component.html",
   styleUrls: ["./chat.component.scss"],
   animations: [
-    trigger("listStagger", [
+    trigger("myStagger", [
       transition("* <=> *", [
         query(
           ":enter",
           [
-            style({ opacity: 0, transform: "translateY(-15px)" }),
+            style({ opacity: 0, transform: "translateY(-10px)" }),
             stagger(
-              "100ms",
+              "5ms",
               animate(
-                "600ms ease-out",
+                "1000ms ease-out",
                 style({ opacity: 1, transform: "translateY(0px)" })
               )
             )
           ],
           { optional: true }
         ),
-        query(":leave", animate("100ms", style({ opacity: 0 })), {
+        query(":leave", animate("10ms", style({ opacity: 0 })), {
           optional: true
         })
       ])
@@ -49,21 +49,20 @@ export class ChatComponent implements OnInit {
     });
   }
   submitChat() {
-    this.chatService.addChat(this.currentChat).subscribe();
+    this.chatService.addChat(this.currentChat).subscribe(() => {
+      this.getChat();
+      this.currentChat = new Chat();
+    });
   }
 
   ngOnInit() {
     this.getChat();
-
-    console.log(this.chats);
   }
 }
 
-document.addEventListener("keyup", function(e) {
-  if (e.keyCode == 13) window.location.reload();
-});
+setTimeout(printSomething, 1000);
 
-window.onload = function() {
-  var objDiv = document.getElementById("chatBody");
-  objDiv.scrollTop = objDiv.scrollHeight;
-};
+function printSomething() {
+  for (var i = 0; i < 10; i++) {}
+  window.scrollTo(0, document.body.scrollHeight);
+}

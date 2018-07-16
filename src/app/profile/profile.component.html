@@ -1,26 +1,26 @@
-<form>
+<form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
+      <input type="text" class="form-control" name="fName" id="fName" placeholder="First name" [(ngModel)]="currentProfile.firstName">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
+      <input type="text" class="form-control" name="lName" id="lName" placeholder="Last name" [(ngModel)]="currentProfile.lastName">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="E-mail">
+      <input type="text" class="form-control" name="e-mail" id="e-mail" placeholder="E-mail" [(ngModel)]="currentProfile.email">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="User Name">
+      <input type="text" class="form-control" name="user" id="user" placeholder="User Name" [(ngModel)]="currentProfile.username">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Password">
+      <input type="password" class="form-control" name="pword" id="pword" placeholder="Password" [(ngModel)]="currentProfile.password">
     </div>
   </div>
-  <button type="submit">Create Profile</button>
+  <button type="submit" (click)="submitProfile(this.form)">Create Profile</button>
 </form>

@@ -28,6 +28,26 @@ import { PhotosService } from "./photos.service";
 import { DetailsPhotosComponent } from "./photos/details-photos/details-photos.component";
 import { FormPhotosComponent } from "./photos/form-photos/form-photos.component";
 import { ListPhotosComponent } from "./photos/list-photos/list-photos.component";
+import { MainprofileComponent } from "./mainprofile/mainprofile.component";
+import { SettingsComponent } from "./settings/settings.component";
+import { loginComponent } from "./login/login.component";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from "angular5-social-login";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(
+        "157286943979-ovd6986gl60f6qu2smogs0ddmrrtbusd.apps.googleusercontent.com"
+      )
+    }
+  ]);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -44,6 +64,9 @@ import { ListPhotosComponent } from "./photos/list-photos/list-photos.component"
     DetailsPhotosComponent,
     FormPhotosComponent,
     ListPhotosComponent
+    MainprofileComponent,
+    SettingsComponent,
+    loginComponent
   ],
 
   imports: [
@@ -55,9 +78,18 @@ import { ListPhotosComponent } from "./photos/list-photos/list-photos.component"
     HttpClientModule,
     NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [PhotosService],
+  providers: [
+    PhotosService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
+ 
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

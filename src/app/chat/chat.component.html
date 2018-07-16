@@ -1,41 +1,44 @@
 <!DoctypeHTML>
-<html>
+<html id="pg">
 
-<body>
+<body id="scrl">
 
 
   <div id="chatAll">
 
 
-    <div id="chatBody">
-      <!-- <textbox *ngFor="let chat of chats" placeholder="Click submit to see your words here">{{chat.user}}: {{chat.message}}</textbox> -->
-      <!-- <div class="USERSONLINE" id="usersOnline"> Availble users / friends -->
-      <!-- Friends list with button feature -->
-
+    <div [@myStagger]="chats" id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <div *ngFor="let chat of chats" class="list-group">
-        <div> {{chat.user}}:
+        <div>
+          <span>
+            <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg">
+          </span>
+          <span id="username">{{chat.user}}Christopher Brimhall:</span>
           <span id="timestamp">3 days ago</span>
 
           <p id="chatMessage">{{chat.message}}</p>
         </div>
       </div>
-    </div>
+    </div>s
   </div>
-
-
-
 </body>
+
+
+
 <footer>
 
   <div class="input-group mb-3" id="sendMessage">
-
-    <input (keyup.enter)="submitChat()" (keyup.enter)="document.getElementById('message').value = ''" type="text" id="message"
-      class="form-control" [(ngModel)]="currentChat.message" placeholder="message" aria-label="" aria-describedby="basic-addon1">
-    <div class="input-group-prepend">
-      <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
-    </div>
+    <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
+    <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="Write a message..."
+      aria-label="" aria-describedby="basic-addon1">
   </div>
+
+  <div>
+    <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+  </div>
+
 </footer>
+
 
 </html>
 

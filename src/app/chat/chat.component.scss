@@ -1,55 +1,92 @@
 html {
   padding-right: 68px;
   background-color: (#e2e2e2);
-  padding-bottom: 55px;
+  padding-bottom: 89px;
   height: 100%;
+  width: 100%;
 }
 #chatAll {
   font-family: "Montserrat", sans-serif;
   width: 100%;
-  height: 87vh;
-  background-color: (#e2e2e2);
+  // height: 87vh;
+  background-color: (#e2e2e275);
 }
 
 #chatBody {
-  padding-left: 28%;
-  padding-top: 10px;
-  padding-right: 15%;
-  overflow-y: scroll;
-  width: 96%;
-  height: 100%;
+  padding-left: 83px;
+  padding-top: 70px;
+  // padding-right: 15%;
+  // overflow-y: scroll;
+  width: 100%;
+}
+#username {
+  font-size: 16px;
+  margin-right: 10px;
+}
+#timestamp {
+  font-size: 10px;
+}
+#userimg {
+  border: solid 3px;
+  border-radius: 25%;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
 }
 .list-group {
-  border: solid;
-  border-radius: 20px;
-  padding: 9px;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-color: #e2e2e2;
+  color: black;
+  border-radius: 0px;
+  padding: 20px;
   padding-bottom: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   margin-right: 40px;
-  width: 92%;
-  background-color: #3564ff25;
+  width: 100%;
+  // background-color: #3564ff0c;
   span {
     font-size: 11px;
   }
 }
 #chatMessage {
   font-size: 16px;
-  margin-left: 10px;
+  margin-left: 70px;
+  margin-top: -10px;
   word-wrap: break-word;
 }
 
 footer {
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
   color: white;
-  text-align: center;
-  padding-right: 68px;
-  background-color: (#535353);
+  // text-align: center;
+  margin-bottom: -16px;
+  background-color: #e2e2e2;
+  right: 0px;
+  left: 78px;
+  margin-right: 63px;
+  // width: 100%;
+  background-color: #535353;
 }
 #sendMessage {
-  padding-left: 84px;
+  height: 75px;
+  border: solid 3px;
+
+  border-color: #535353;
+}
+input {
+  background-color: #e2e2e2;
+  border: solid 3px;
+  border-color: #535353;
+}
+
+button {
+  margin-top: -16px;
+  background-color: #e2e2e2;
+  padding-bottom: 20px;
+  margin-right: 4px;
+  float: right;
 }
 
 // position: absolute;
