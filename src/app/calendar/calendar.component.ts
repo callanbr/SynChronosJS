@@ -168,6 +168,7 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
     this.calendarService.getEvents().subscribe(data => {
       this.events = data.map(d =>
+        //ignore this error it will run
         Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
       );
       this.refresh.next();

@@ -24,6 +24,10 @@ import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
+import { PhotosService } from "./photos.service";
+import { DetailsPhotosComponent } from "./photos/details-photos/details-photos.component";
+import { FormPhotosComponent } from "./photos/form-photos/form-photos.component";
+import { ListPhotosComponent } from "./photos/list-photos/list-photos.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { CalendarModule } from "angular-calendar";
     EventsComponent,
     NavComponent,
     SidenavComponent,
-    GroupsComponent
+    GroupsComponent,
+    DetailsPhotosComponent,
+    FormPhotosComponent,
+    ListPhotosComponent
   ],
 
   imports: [
@@ -50,7 +57,7 @@ import { CalendarModule } from "angular-calendar";
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot()
   ],
-  providers: [],
+  providers: [PhotosService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
