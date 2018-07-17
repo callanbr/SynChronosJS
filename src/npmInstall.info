@@ -1,0 +1,11 @@
+npm i angular-calendar
+npm i angular-flatpickr
+
+npm install angular5-social-login
+npm install --save @types/gapi
+npm install --save @types/gapi.auth2
+npm install angular-google-auth2
+npm i angular-google-signin
+npm i rxjs-compat
+npm i zone
+

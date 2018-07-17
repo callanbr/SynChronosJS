@@ -24,6 +24,10 @@ import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 import { GlobalComponent } from "./global.component";
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
+import { PhotosService } from "./photos.service";
+import { DetailsPhotosComponent } from "./photos/details-photos/details-photos.component";
+import { FormPhotosComponent } from "./photos/form-photos/form-photos.component";
+import { ListPhotosComponent } from "./photos/list-photos/list-photos.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { LoginComponent } from "./login/login.component";
@@ -59,6 +63,9 @@ export function getAuthServiceConfigs() {
     NavComponent,
     SidenavComponent,
     GroupsComponent,
+    DetailsPhotosComponent,
+    FormPhotosComponent,
+    ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
     LoginComponent
@@ -79,6 +86,7 @@ export function getAuthServiceConfigs() {
     SocialLoginModule
   ],
   providers: [
+    PhotosService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs,
@@ -89,6 +97,7 @@ export function getAuthServiceConfigs() {
  
     GlobalComponent
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

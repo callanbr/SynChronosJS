@@ -31,10 +31,11 @@
     "angularx-flatpickr": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "fileupload": "^1.0.0",
     "flatpickr": "^4.5.1",
     "ng-flatpickr": "^0.2.4",
     "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.2.1",
+    "rxjs-compat": "^6.2.2",
     "zone": "^0.3.4",
     "zone.js": "^0.8.26"
   },

@@ -1,17 +1,20 @@
 import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { PhotosService } from "../photos.service";
+import { PhotosService } from "../../photos.service";
 
 @Component({
-  selector: "app-photos",
-  templateUrl: "./photos.component.html",
-  styleUrls: ["./photos.component.css"]
+  selector: "list-photos",
+  templateUrl: "./list-photos.component.html",
+  styleUrls: ["./list-photos.component.css"]
 })
-export class PhotosComponent implements OnInit {
+export class ListPhotosComponent implements OnInit {
   showFile = false;
   fileUploads: Observable<string[]>;
 
   constructor(private photosService: PhotosService) {}
+
+  ngOnInit() {}
 
   showFiles(enable: boolean) {
     this.showFile = enable;
@@ -20,6 +23,4 @@ export class PhotosComponent implements OnInit {
       this.fileUploads = this.photosService.getFiles();
     }
   }
-
-  ngOnInit() {}
 }
