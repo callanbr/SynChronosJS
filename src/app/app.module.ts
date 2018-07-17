@@ -11,7 +11,7 @@ import { EventsComponent } from "./events/events.component";
 import { NavComponent } from "./nav/nav.component";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from ".//app-routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { SidenavComponent } from "./sidenav/sidenav.component";
 import { GroupsComponent } from "./groups/groups.component";
 
@@ -21,12 +21,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { FlatpickrModule } from "angularx-flatpickr";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
-
+import { GlobalComponent } from "./global.component";
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { loginComponent } from "./login/login.component";
+import { LoginComponent } from "./login/login.component";
+import { LoginService } from "./login/login.service";
+import { JwtInterceptor, ErrorInterceptor} from './helpers';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -59,7 +61,9 @@ export function getAuthServiceConfigs() {
     GroupsComponent,
     MainprofileComponent,
     SettingsComponent,
-    loginComponent
+    LoginComponent
+    
+    
   ],
 
   imports: [
@@ -77,8 +81,13 @@ export function getAuthServiceConfigs() {
   providers: [
     {
       provide: AuthServiceConfig,
-      useFactory: getAuthServiceConfigs
-    }
+      useFactory: getAuthServiceConfigs,
+      
+    }, 
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+ 
+    GlobalComponent
   ],
   bootstrap: [AppComponent]
 })
