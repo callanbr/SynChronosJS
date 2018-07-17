@@ -10,7 +10,7 @@ import { EventsComponent } from "./events/events.component";
 import { NavComponent } from "./nav/nav.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { LoginComponent } from "./login/login.component";
+import { loginComponent } from "./login/login.component";
 import { AuthGuard } from "./guards"; 
 
 const routes: Routes = [
@@ -23,8 +23,8 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: "mainprofile", component: MainprofileComponent },
   { path: "settings", component: SettingsComponent },
-  { path: "login", component: LoginComponent },
-  { path: "", component: LoginComponent, canActivate: [AuthGuard]}
+  { path: "login", component: loginComponent },
+  { path: "", component: loginComponent, canActivate: [AuthGuard]}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

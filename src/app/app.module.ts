@@ -30,7 +30,7 @@ import { FormPhotosComponent } from "./photos/form-photos/form-photos.component"
 import { ListPhotosComponent } from "./photos/list-photos/list-photos.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
-import { LoginComponent } from "./login/login.component";
+import { loginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
 import { JwtInterceptor, ErrorInterceptor} from './helpers';
 import {
@@ -68,7 +68,7 @@ export function getAuthServiceConfigs() {
     ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
-    LoginComponent
+    loginComponent
     
     
   ],
