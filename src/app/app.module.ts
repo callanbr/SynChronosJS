@@ -32,7 +32,7 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { loginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
-import { JwtInterceptor, ErrorInterceptor} from './helpers';
+import { JwtInterceptor, ErrorInterceptor } from "./helpers";
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -72,16 +72,11 @@ export function getAuthServiceConfigs() {
     ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
-<<<<<<< HEAD
     loginComponent,
     ProfilePhotoFormComponent,
     ProfilePhotoListComponent,
-    ProfilePhotoDetailComponent
-=======
+    ProfilePhotoDetailComponent,
     loginComponent
-    
-    
->>>>>>> fd955f9958c66b9c2327ca5ca71d1735b22fe8dd
   ],
 
   imports: [
@@ -101,12 +96,11 @@ export function getAuthServiceConfigs() {
     ProfileService,
     {
       provide: AuthServiceConfig,
-      useFactory: getAuthServiceConfigs,
-      
-    }, 
+      useFactory: getAuthServiceConfigs
+    },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
- 
+
     GlobalComponent
   ],
 
