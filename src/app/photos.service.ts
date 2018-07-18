@@ -30,6 +30,6 @@ export class PhotosService {
   }
 
   getFiles(): Observable<string[]> {
-    return this.http.get<string[]>("/getallfiles");
+    return this.http.get<string[]>("http://localhost:8080/photos");
   }
 }

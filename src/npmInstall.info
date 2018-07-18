@@ -8,4 +8,3 @@ npm install angular-google-auth2
 npm i angular-google-signin
 npm i rxjs-compat
 npm i zone
-

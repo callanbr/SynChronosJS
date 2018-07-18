@@ -36,6 +36,10 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider
 } from "angular5-social-login";
+import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/profile-photo-detail.component";
+import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
+import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
+import { ProfileService } from "./profile.service";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig([
@@ -66,7 +70,10 @@ export function getAuthServiceConfigs() {
     ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
-    loginComponent
+    loginComponent,
+    ProfilePhotoFormComponent,
+    ProfilePhotoListComponent,
+    ProfilePhotoDetailComponent
   ],
 
   imports: [
@@ -83,6 +90,7 @@ export function getAuthServiceConfigs() {
   ],
   providers: [
     PhotosService,
+    ProfileService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs

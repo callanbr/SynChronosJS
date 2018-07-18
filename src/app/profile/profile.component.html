@@ -22,5 +22,26 @@
       <input type="password" class="form-control" name="pword" id="pword" placeholder="Password" [(ngModel)]="currentProfile.password">
     </div>
   </div>
+
   <button type="submit" (click)="submitProfile(this.form)">Create Profile</button>
 </form>
+
+
+
+
+
+
+
+<div class="container" style="width:400px">
+  <div style="color: blue; margin-bottom: 20px">
+    <h1>{{title}}</h1>
+    <h3>{{description}}</h3>
+  </div>
+
+  <profile-photo-form></profile-photo-form>
+
+  <br/>
+  <br/>
+
+  <profile-photo-list></profile-photo-list>
+</div>
