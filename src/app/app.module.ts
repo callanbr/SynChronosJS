@@ -75,7 +75,12 @@ export function getAuthServiceConfigs() {
     loginComponent,
     ProfilePhotoFormComponent,
     ProfilePhotoListComponent,
+<<<<<<< HEAD
     ProfilePhotoDetailComponent
+=======
+    ProfilePhotoDetailComponent,
+    loginComponent
+>>>>>>> 2744568fad01d5b02b43c22ff4b5b2fbf440b3c1
   ],
 
   imports: [
