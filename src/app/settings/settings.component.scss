@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 html {
-  padding: 122px 68px 0 84px;
 }
 body {
-  padding: 20px;
+  padding-top: 100px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
-  color: #023660;
-  background-color: #f7f7f7;
+  height: 1200px;
 }
 
 .switch-wrapper {
@@ -124,45 +122,57 @@ input:checked ~ .switch:before {
   transform: translate(60px, -50%);
 }
 
-body {
-  padding: 1em 2em;
-  font-size: 1em;
-  font-family: Open-Sans;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
-}
+// body {
+//   padding: 1em 2em;
+//   font-size: 1em;
+//   font-family: Open-Sans;
+// }
 
 /* class color switch*/
 body.dark-mode {
-  background: #18272f;
+  background: #424242;
   color: whitesmoke;
+  font-family: Open-Sans;
 }
-body.dark-mode strong {
-  color: whitesmoke;
-}
-body.dark-mode p code {
-  background: whitesmoke;
-}
+// body.dark-mode strong {
+//   color: whitesmoke;
+// }
+// body.dark-mode p code {
+//   background: whitesmoke;
+// }
 body.dark-mode button {
   background-color: #18272f;
+  color: white;
 }
 
 body.light-mode {
   background: whitesmoke;
-  color: #18272f;
+  font-family: Open-Sans;
 }
-body.light-mode pre {
-  border: #18272f solid 1px;
-}
-body.light-mode strong {
-  color: #18272f;
-}
-body.light-mode p code {
-  background: #18272f;
-}
+// body.light-mode pre {
+//   border: #18272f solid 1px;
+// }
+// body.light-mode strong {
+//   color: #18272f;
+// }
+// body.light-mode p code {
+//   background: #18272f;
+// }
 body.light-mode button {
   background-color: whitesmoke;
 }
 
 button {
   font-size: 1.8em;
+}
+
+div.dark-mode {
+  background-color: #424242;
+  color: white;
+  border: solid 2px;
+  border-color: goldenrod;
+}
+
+div.light-mode {
+  background: whitesmoke;
 }

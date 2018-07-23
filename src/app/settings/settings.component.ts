@@ -10,14 +10,3 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {}
 }
-
-// function toggleDarkLight() {
-//   var body = document.getElementById("body");
-//   console.log(body);
-//   var currentClass = body.className;
-//   var icon = document.getElementById("switchCheckbox");
-//   icon.innerHTML = currentClass == "dark-mode" ? "☀️" : "🌙";
-
-//   body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-// }
-//

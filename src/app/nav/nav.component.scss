@@ -1,31 +1,108 @@
-nav {
-  background: #313131;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+h1 {
+  font-size: 26px;
+}
 
-    li {
-      a {
-        color: rgb(253, 202, 71);
-        text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
-        padding: 15px 0px 15px 21px;
-        display: block;
-        font-size: 32px;
-        span {
-          color: rgba(0, 204, 255, 0.288);
-          font-size: 46px;
-          padding-right: 10px;
-          padding-left: 10px;
-        }
-      }
-    }
+div.light-mode a:hover {
+  background-color: #ddd;
+  text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
+  color: black;
+}
+div.dark-mode a:hover {
+  background-color: #ddd;
+  text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
+  color: rgb(230, 10, 10);
+}
+
+div.light-mode .icon {
+  display: none;
+}
+div.dark-mode .icon {
+  display: none;
+}
+
+// @media screen and (max-width: 800px) {
+//   div {
+//     background-color: #31313186;
+//   }
+// }
+@media screen and (max-width: 800px) {
+  div.light-mode a:not(:first-child) {
+    display: none;
+  }
+  div.light-mode a.icon {
+    float: right;
+    display: block;
+  }
+  div.dark-mode a:not(:first-child) {
+    display: none;
+  }
+  div.dark-mode a.icon {
+    float: right;
+    display: block;
   }
 }
 
-// color: #e2e2e2;
-//         text-shadow: 1px 1px 2px #353535, 0 0 35px #ff652f, 0 0 5px #353535;
+@media screen and (max-width: 800px) {
+  div.light-mode.responsive {
+    position: relative;
+  }
+  div.dark-mode.responsive {
+    position: relative;
+  }
+  div.light-mode.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  div.dark-mode.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  div.light-mode.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  div.dark-mode.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+div.light-mode {
+  background: linear-gradient(rgba(189, 189, 189, 0.95), #f1f1f1ea);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+div.dark-mode {
+  background: linear-gradient(rgba(22, 22, 22, 0.95), #313131ea);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+div.light-mode a {
+  float: left;
+  display: block;
+  color: #401a7e;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+div.dark-mode a {
+  float: left;
+  display: block;
+  color: goldenrod;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
