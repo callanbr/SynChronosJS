@@ -1,4 +1,16 @@
+<!DoctypeHTML>
+<html>
+
 <body>
+  <form name="makeGroup" id="makeGroup" action="http://localhost:8080/profile" method="POST">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addGroup" (click)="submitGroup()">Add Group</button>
+      </div>
+
+      <input type="text" class="Group-form" placeholder="Create a Group" name="newGroup" id="newGroup" [(ngModel)]="makeGroup.groupname">
+    </div>
+  </form>
   <ul>
     <li>
       <a routerLink='settings' [class.activated]="currentUrl == '/settings'">
@@ -6,5 +18,9 @@
 
       </a>
     </li>
+    <li>{{makeGroup.groupname}}</li>
   </ul>
+
 </body>
+
+</html>

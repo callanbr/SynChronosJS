@@ -1,5 +1,5 @@
 export class Chat {
   id: number;
-  user: string;
+  username: string;
   message: string;
 }

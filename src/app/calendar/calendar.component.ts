@@ -16,8 +16,8 @@ import {
   isSameMonth,
   addHours
 } from "date-fns";
-
-import { Subject } from "rxjs";
+import "rxjs/add/operator/map";
+import { Subject, Observable, pipe } from "rxjs";
 import {
   CalendarEvent,
   CalendarEventAction,
@@ -25,7 +25,8 @@ import {
 } from "angular-calendar";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap/modal/modal";
 import { CalendarService } from "../calendar.service";
-
+import { CEvent } from "../calendar";
+// import { CalendarEvent } from "../calendar";
 const colors: any = {
   red: {
     primary: "#ad2121",
@@ -48,7 +49,7 @@ const colors: any = {
   styleUrls: ["./calendar.component.css"]
 })
 export class CalendarComponent implements OnInit {
-  // constructor(private calendarService: CalendarService) {}
+  //constructor(private calendarService: CalendarService) {}
 
   @ViewChild("modalContent") modalContent: TemplateRef<any>;
   view: string = "month";
@@ -164,14 +165,17 @@ export class CalendarComponent implements OnInit {
     });
     this.refresh.next();
   }
+  submitCalendar() {
+    this.calendarService.addEvent(this.modalData).subscribe();
+  }
 
   ngOnInit() {
-    this.calendarService.getEvents().subscribe(data => {
-      this.events = data.map(d =>
-        Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
-      );
-      this.refresh.next();
-    });
-    this.addEvent();
+    // this.calendarService.getEvents().subscribe(data => {
+    //   this.events = data.map(d =>
+    //     Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
+    //   );
+    //   this.refresh.next();
+    // });
+    // this.addEvent();
   }
 }

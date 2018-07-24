@@ -28,7 +28,8 @@
     "core-js": "^2.5.4",
     "flatpickr": "^4.5.1",
     "ng-flatpickr": "^0.2.4",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

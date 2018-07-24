@@ -9,13 +9,13 @@
 
     <div [@myStagger]="chats" id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <div *ngFor="let chat of chats" class="list-group">
-        <div> {{chat.user}}:
-          <span id="timestamp">3 days ago</span>
+        <div> {{chat.username}}:
+          <span id="timestamp">{{chat.timestamp}}</span>
 
           <p id="chatMessage">{{chat.message}}</p>
         </div>
       </div>
-    </div>s
+    </div>
   </div>
 </body>
 
