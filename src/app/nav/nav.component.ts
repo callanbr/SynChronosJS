@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Profile } from "../profile";
 
 @Component({
   selector: "app-nav",
