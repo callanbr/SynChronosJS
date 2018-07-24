@@ -11,7 +11,7 @@ import { EventsComponent } from "./events/events.component";
 import { NavComponent } from "./nav/nav.component";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from ".//app-routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { SidenavComponent } from "./sidenav/sidenav.component";
 import { GroupsComponent } from "./groups/groups.component";
 
@@ -21,10 +21,39 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { FlatpickrModule } from "angularx-flatpickr";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
-
+import { GlobalComponent } from "./global.component";
 import { CommonModule } from "@angular/common";
 import { CalendarModule } from "angular-calendar";
+import { PhotosService } from "./photos.service";
+import { DetailsPhotosComponent } from "./photos/details-photos/details-photos.component";
+import { FormPhotosComponent } from "./photos/form-photos/form-photos.component";
+import { ListPhotosComponent } from "./photos/list-photos/list-photos.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
+import { SettingsComponent } from "./settings/settings.component";
+import { loginComponent } from "./login/login.component";
+import { LoginService } from "./login/login.service";
+import { JwtInterceptor, ErrorInterceptor } from "./helpers";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from "angular5-social-login";
+import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/profile-photo-detail.component";
+import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
+import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
+import { ProfileService } from "./profile.service";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(
+        "157286943979-ovd6986gl60f6qu2smogs0ddmrrtbusd.apps.googleusercontent.com"
+      )
+    }
+  ]);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -38,7 +67,17 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
     NavComponent,
     SidenavComponent,
     GroupsComponent,
-    MainprofileComponent
+    DetailsPhotosComponent,
+    FormPhotosComponent,
+    ListPhotosComponent,
+    MainprofileComponent,
+    SettingsComponent,
+    loginComponent,
+    ProfilePhotoFormComponent,
+    ProfilePhotoListComponent,
+    ProfilePhotoDetailComponent,
+    ProfilePhotoDetailComponent,
+    loginComponent
   ],
 
   imports: [
@@ -50,9 +89,22 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
     HttpClientModule,
     NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    PhotosService,
+    ProfileService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    GlobalComponent
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

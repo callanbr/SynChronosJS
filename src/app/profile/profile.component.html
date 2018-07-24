@@ -1,26 +1,34 @@
 <form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="fName" id="fName" placeholder="First name" [(ngModel)]="currentProfile.firstName">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" name="lName" id="lName" placeholder="Last name" [(ngModel)]="currentProfile.lastName">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
       <input type="text" class="form-control" name="e-mail" id="e-mail" placeholder="E-mail" [(ngModel)]="currentProfile.email">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="user" id="user" placeholder="User Name" [(ngModel)]="currentProfile.username">
+      <input type="text" class="form-control" name="user" id="user" placeholder="User Name" [(ngModel)]="currentProfile.name">
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <input type="password" class="form-control" name="pword" id="pword" placeholder="Password" [(ngModel)]="currentProfile.password">
-    </div>
-  </div>
+
   <button type="submit" (click)="submitProfile(this.form)">Create Profile</button>
 </form>
+
+
+
+
+
+
+<!-- this is ryan's photo code  -->
+<div class="container" style="width:400px">
+  <div style="color: blue; margin-bottom: 20px">
+    <h1>{{title}}</h1>
+    <h3>{{description}}</h3>
+  </div>
+
+  <profile-photo-form></profile-photo-form>
+
+  <br/>
+  <br/>
+
+  <profile-photo-list></profile-photo-list>
+</div>

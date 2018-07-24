@@ -21,15 +21,28 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
+    "@types/gapi": "0.0.35",
+    "@types/gapi.auth2": "0.0.47",
     "angular-calendar": "^0.25.2",
     "angular-flatpickr": "^3.4.0",
+    "angular-google-auth2": "^1.0.8",
+    "angular-google-signin": "^0.1.5",
+    "angular5-social-login": "^1.0.9",
     "angularx-flatpickr": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "ember-http-error-handler": "0.0.8",
+    "fileupload": "^1.0.0",
     "flatpickr": "^4.5.1",
     "ng-flatpickr": "^0.2.4",
+<<<<<<< HEAD
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",
+=======
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.2",
+    "zone": "^0.3.4",
+>>>>>>> 4407fe584c94b389a1a3a913ef4e24209ab974f1
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
