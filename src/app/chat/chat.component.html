@@ -9,17 +9,12 @@
 
     <div [@myStagger]="chats" id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <div *ngFor="let chat of chats" class="list-group">
-<<<<<<< HEAD
-        <div> {{chat.username}}:
-          <span id="timestamp">{{chat.timestamp}}</span>
-=======
         <div>
           <span>
             <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg">
           </span>
           <span id="username">{{chat.name}}:</span>
           <span id="timestamp">3 days ago</span>
->>>>>>> 4407fe584c94b389a1a3a913ef4e24209ab974f1
 
           <p id="chatMessage">{{chat.message}}</p>
         </div>

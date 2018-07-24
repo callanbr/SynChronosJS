@@ -172,10 +172,7 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
     // this.calendarService.getEvents().subscribe(data => {
     //   this.events = data.map(d =>
-<<<<<<< HEAD
-=======
     //     //ignore this error it will run
->>>>>>> 4407fe584c94b389a1a3a913ef4e24209ab974f1
     //     Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
     //   );
     //   this.refresh.next();
