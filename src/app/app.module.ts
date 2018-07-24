@@ -76,7 +76,6 @@ export function getAuthServiceConfigs() {
     ProfilePhotoFormComponent,
     ProfilePhotoListComponent,
     ProfilePhotoDetailComponent,
-    ProfilePhotoDetailComponent,
     loginComponent
   ],
 

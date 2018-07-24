@@ -32,6 +32,7 @@ export class ProfilePhotoFormComponent implements OnInit {
     this.progress.percentage = 0;
 
     this.currentFileUpload = this.selectedFiles.item(0);
+    //console.log(this.selectedFiles.item(0));
     this.profileService
       .pushFileToStorage(this.currentFileUpload)
       .subscribe(event => {
