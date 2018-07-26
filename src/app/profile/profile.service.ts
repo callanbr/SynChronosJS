@@ -8,17 +8,15 @@ import { catchError } from "rxjs/operators";
 
 
 @Injectable({ providedIn:"root"})
-export class LoginService {
-  heroesUrl = "http://localhost:8080/login"; // URL to web api
+export class ProfileService {
+  heroesUrl = "http://localhost:8080/profile/"; // URL to web api
 
   constructor(private http: HttpClient) {}
+ 
+  getProfile(id: number): Observable<any> {
+    return this.http.get(this.heroesUrl+id);
 
-  loginUser(userData: any): Observable<any> {
-    return this.http.post(this.heroesUrl, userData);
   }
 
 
-  logout() {
-    localStorage.removeItem("currentUser");
-  }
 }

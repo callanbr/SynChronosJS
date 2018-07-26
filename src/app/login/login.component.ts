@@ -20,11 +20,10 @@ export class loginComponent implements OnInit {
 
     this.socialAuthService.signIn(socialPlatformProvider).then(userData => {
       this.loginService.loginUser(userData).subscribe(data => {
-        localStorage.setItem('currentUser',JSON.stringify({ token: data }));
+        localStorage.setItem('currentUser',JSON.stringify({ token : data.token, name: data.name, email: data.email, image: data.image, Id: data.id }));
       }
     );
-      (<any>window).mything = this.loginService;
-      console.log("This is a token:" + userData.token);
+
     });
   }
 

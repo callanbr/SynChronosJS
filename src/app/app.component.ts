@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { HomeService } from "./home.service";
 import { ChatService } from "./chat.service";
-import { ProfileService } from "./profile.service";
 import { CalendarService } from "./calendar.service";
 import { EventsService } from "./events.service";
 

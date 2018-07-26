@@ -15,6 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { SidenavComponent } from "./sidenav/sidenav.component";
 import { GroupsComponent } from "./groups/groups.component";
 
+
 import "flatpickr/dist/flatpickr.css";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -32,16 +33,14 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { loginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
+import { ProfileService } from "./profile/profile.service";
 import { JwtInterceptor, ErrorInterceptor } from "./helpers";
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider
 } from "angular5-social-login";
-import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/profile-photo-detail.component";
-import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
-import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
-import { ProfileService } from "./profile.service";
+
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig([
@@ -72,11 +71,6 @@ export function getAuthServiceConfigs() {
     ListPhotosComponent,
     MainprofileComponent,
     SettingsComponent,
-    loginComponent,
-    ProfilePhotoFormComponent,
-    ProfilePhotoListComponent,
-    ProfilePhotoDetailComponent,
-    ProfilePhotoDetailComponent,
     loginComponent
   ],
 
@@ -94,7 +88,6 @@ export function getAuthServiceConfigs() {
   ],
   providers: [
     PhotosService,
-    ProfileService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs

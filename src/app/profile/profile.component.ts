@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ProfileService } from "../profile.service";
-import { Profile } from "../profile";
+import { ProfileService } from "./profile.service";
 import { Observable } from "../../../node_modules/rxjs";
+import { ProfileDTO} from "./ProfileDTO";
 
 @Component({
   selector: "app-profile",
@@ -11,15 +11,19 @@ import { Observable } from "../../../node_modules/rxjs";
 export class ProfileComponent implements OnInit {
   showFile = false;
   fileUploads: Observable<string[]>;
+  currentProfile: ProfileDTO = new ProfileDTO();
 
-  currentProfile: Profile = new Profile();
   constructor(private profileService: ProfileService) {}
 
-  profile: Profile;
+  profile: ProfileDTO;
 
   getProfile() {
-    this.profileService.getProfile().subscribe(p => {
+    var OutOfLocalStorage= (localStorage.getItem('currentUser'));
+    var Parseing = JSON.parse (OutOfLocalStorage);
+
+    this.profileService.getProfile(Parseing.Id).subscribe(p => {
       this.profile = p;
+      this.currentProfile= p;
     });
   }
   submitProfile() {
@@ -28,17 +32,15 @@ export class ProfileComponent implements OnInit {
     //let fname = form.firstName.value;
     //console.log("fname", fname);
 
-    this.profileService.addProfile(this.currentProfile).subscribe();
-    console.log(this.profile);
+    // this.profileService.addProfile(this.currentProfile).subscribe();
+    // console.log(this.profile);
   }
 
-  showFiles(enable: boolean) {
-    this.showFile = enable;
+ 
+  
 
-    if (enable) {
-      this.fileUploads = this.profileService.getFiles();
-    }
+  ngOnInit() {
+
+    this.getProfile();
   }
-
-  ngOnInit() {}
 }
