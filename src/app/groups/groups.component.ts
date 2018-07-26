@@ -20,7 +20,13 @@ export class GroupsComponent implements OnInit {
   }
 
   submitGroup() {
-    this.groupsService.addGroup(this.makeGroup).subscribe();
+    this.groupsService.addGroup(this.makeGroup).subscribe(() => {
+      this.getGroup();
+      this.makeGroup = new Group();
+    });
   }
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.getGroup();
+  }
 }
