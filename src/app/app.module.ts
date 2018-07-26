@@ -18,6 +18,7 @@ import { GroupsComponent } from "./groups/groups.component";
 import "flatpickr/dist/flatpickr.css";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { FlatpickrModule } from "angularx-flatpickr";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
@@ -42,7 +43,7 @@ import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/prof
 import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
 import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
 import { ProfileService } from "./profile.service";
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownComponent } from "./dropdown/dropdown.component";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig([
@@ -87,6 +88,7 @@ export function getAuthServiceConfigs() {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule.forRoot(),
     HttpClientModule,
     NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),

@@ -1,3 +1,24 @@
+<!-- <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Link 1</a>
+    <a class="dropdown-item" href="#">Link 2</a>
+    <a class="dropdown-item" href="#">Link 3</a>
+  </div>
+</div> -->
+
 <p>
-  dropdown works!
+  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample">
+    Toggle
+  </button>
 </p>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      You can collapse this card by clicking Toggle
+    </div>
+  </div>
+</div>

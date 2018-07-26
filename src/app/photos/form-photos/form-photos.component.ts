@@ -11,6 +11,7 @@ import {
   styleUrls: ["./form-photos.component.css"]
 })
 export class FormPhotosComponent implements OnInit {
+  // public isCollapsed = true;
   selectedFiles: FileList;
   currentFileUpload: File;
   progress: { percentage: number } = { percentage: 0 };
