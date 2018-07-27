@@ -165,18 +165,27 @@ export class CalendarComponent implements OnInit {
     });
     this.refresh.next();
   }
-  submitCalendar() {
-    this.calendarService.addEvent(this.modalData).subscribe();
+  saveEvent(newEvent) {
+    newEvent.color = newEvent.color.primary;
+    this.calendarService.addEvent(newEvent).subscribe();
   }
 
   ngOnInit() {
     // this.calendarService.getEvents().subscribe(data => {
-    //   this.events = data.map(d =>
-    //     //ignore this error it will run
-    //     Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
-    //   );
-    //   this.refresh.next();
+    //   this.events = data.map(d => {
+    //     CEvent
+
+    //   });
+    // this.refresh.next();
     // });
-    // this.addEvent();
+
+    this.calendarService.getEvents().subscribe(data => {
+      this.events = data.map(d =>
+        //ignore this error it will run
+        Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
+      );
+      this.refresh.next();
+    });
+    this.addEvent();
   }
 }

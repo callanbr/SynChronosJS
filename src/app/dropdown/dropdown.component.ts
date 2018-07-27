@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { CalendarService } from "../calendar.service";
 
 @Component({
   selector: "app-dropdown",
@@ -7,8 +8,11 @@ import { Component, OnInit } from "@angular/core";
 })
 export class DropdownComponent implements OnInit {
   public isCollapsed = true;
+  getEvents: any;
 
-  constructor() {}
+  constructor(private calendarService: CalendarService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getEvents();
+  }
 }
