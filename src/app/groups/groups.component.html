@@ -2,7 +2,7 @@
 <html>
 
 <body>
-  <form name="makeGroup" id="makeGroup" action="http://localhost:8080/profile" method="POST">
+  <form name="makeGroup" id="makeGroup" action="http://localhost:8080/groups" method="POST">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <button class="btn btn-outline-secondary" type="submit" id="button-addGroup" (click)="submitGroup()">Add Group</button>
@@ -11,6 +11,8 @@
       <input type="text" class="Group-form" placeholder="Create a Group" name="newGroup" id="newGroup" [(ngModel)]="makeGroup.groupname">
     </div>
   </form>
+
+
   <ul>
     <li>
       <a routerLink='settings' [class.activated]="currentUrl == '/settings'">
@@ -18,7 +20,22 @@
 
       </a>
     </li>
-    <li>{{makeGroup.groupname}}</li>
+    <li>
+      <div *ngFor="let groups of group" class="list-groups">
+        <div>
+
+          <span>
+            <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
+          </span>
+          <span id="groupname-title">
+            <a href="">{{groups.groupname}}: </a>
+          </span>
+
+
+        </div>
+      </div>
+
+    </li>
   </ul>
 
 </body>
