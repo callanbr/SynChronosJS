@@ -33,16 +33,17 @@ import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { loginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
+import { ProfileService } from "./profile/profile.service"; 
 import { JwtInterceptor, ErrorInterceptor } from "./helpers";
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider
 } from "angular5-social-login";
-import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/profile-photo-detail.component";
-import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
-import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
-import { ProfileService } from "./profile.service";
+// import { ProfilePhotoDetailComponent } from "./profile/profile-photo-detail/profile-photo-detail.component";
+// import { ProfilePhotoListComponent } from "./profile/profile-photo-list/profile-photo-list.component";
+// import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
+// import { ProfilePhotoService } from "./profilePhoto.service";
 import { DropdownComponent } from "./dropdown/dropdown.component";
 
 export function getAuthServiceConfigs() {
@@ -75,10 +76,9 @@ export function getAuthServiceConfigs() {
     MainprofileComponent,
     SettingsComponent,
     loginComponent,
-    ProfilePhotoFormComponent,
-    ProfilePhotoListComponent,
-    ProfilePhotoDetailComponent,
-    loginComponent,
+    // ProfilePhotoFormComponent,
+    // ProfilePhotoListComponent,
+    // ProfilePhotoDetailComponent,
     DropdownComponent
   ],
 

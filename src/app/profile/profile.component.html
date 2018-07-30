@@ -1,34 +1,39 @@
+<body>
+<img [src]="profilePic" *ngIf="profilePic">
+
 <form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="e-mail" id="e-mail" placeholder="E-mail" [(ngModel)]="currentProfile.email">
+      <h1> Name: </h1>
+      <input type="text" class="form-control" name="name" id="name" placeholder="name" [(ngModel)]="currentProfile.name">
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="user" id="user" placeholder="User Name" [(ngModel)]="currentProfile.name">
+    <h1>Email: </h1>
+      <input type="text" class="form-control" name="email" id="email" placeholder="email" [(ngModel)]="currentProfile.email">
     </div>
   </div>
 
-  <button type="submit" (click)="submitProfile(this.form)">Create Profile</button>
+  <!-- <button type="submit" (click)="submitProfile(this.form)">Edit Profile</button> -->
 </form>
 
-
+</body>
 
 
 
 
 <!-- this is ryan's photo code  -->
-<div class="container" style="width:400px">
+<!-- <div class="container" style="width:400px">
   <div style="color: blue; margin-bottom: 20px">
     <h1>{{title}}</h1>
     <h3>{{description}}</h3>
   </div>
 
-  <profile-photo-form></profile-photo-form>
-
+  <profile-photo-form></profile-photo-form> -->
+<!-- 
   <br/>
   <br/>
 
   <profile-photo-list></profile-photo-list>
-</div>
+</div> -->

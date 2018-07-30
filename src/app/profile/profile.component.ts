@@ -1,7 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { ProfileService } from "../profile.service";
-import { Profile } from "../profile";
+// import { ProfilePhotoService } from "../profilePhoto.service";
+import { ProfileService } from "./profile.service"; 
+// import { Profile } from "../profile";
+import {ProfileDTO} from "./ProfileDTO";
 import { Observable } from "../../../node_modules/rxjs";
+import { DomSanitizer } from "@angular/platform-browser";
+import { ActivatedRoute, Router, ParamMap } from "@angular/router";
+import {switchMap, switchMapTo} from 'rxjs/operators'; 
+
+
 
 @Component({
   selector: "app-profile",
@@ -12,33 +19,45 @@ export class ProfileComponent implements OnInit {
   showFile = false;
   fileUploads: Observable<string[]>;
 
-  currentProfile: Profile = new Profile();
-  constructor(private profileService: ProfileService) {}
+  currentProfile: ProfileDTO = new ProfileDTO();
+  constructor(private profileService: ProfileService, private domSanitizer: DomSanitizer, private route: ActivatedRoute ) {}
 
-  profile: Profile;
+  profile: ProfileDTO;
+  profilePic: string;
 
+
+
+ 
   getProfile() {
-    this.profileService.getProfile().subscribe(p => {
+
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+     this.profileService.getProfile(+params.get("id")))).subscribe(p => { 
       this.profile = p;
+      this.currentProfile= p;
+      this.profilePic= p.image; 
     });
   }
+
   submitProfile() {
     //event.preventDefault();
     // let fnameElement = document.getElementById("firstName");
     //let fname = form.firstName.value;
     //console.log("fname", fname);
 
-    this.profileService.addProfile(this.currentProfile).subscribe();
-    console.log(this.profile);
+    // this.profileService.addProfile(this.currentProfile).subscribe();
+    // console.log(this.profile);
   }
 
-  showFiles(enable: boolean) {
-    this.showFile = enable;
+  // showFiles(enable: boolean) {
+  //   this.showFile = enable;
 
-    if (enable) {
-      this.fileUploads = this.profileService.getFiles();
-    }
-  }
+  //   if (enable) {
+  //     this.fileUploads = this.profileService.getFiles();
+  //   }
+  // }
 
-  ngOnInit() {}
+  ngOnInit() {
+  this.getProfile();
+}
 }
