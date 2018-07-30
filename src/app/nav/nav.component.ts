@@ -10,6 +10,7 @@ export class NavComponent implements OnInit {
   constructor() {}
 
   profileId: number;
+  // calendarId: number;
 
 
   ngOnInit() {
@@ -17,5 +18,6 @@ export class NavComponent implements OnInit {
     var OutOfLocalStorage= (localStorage.getItem('currentUser'));
     var Parseing = JSON.parse (OutOfLocalStorage);
     this.profileId=(Parseing.Id);
+    // this.calendarId=(Parseing.Id);
   }
 }
