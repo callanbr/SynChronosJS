@@ -20,7 +20,7 @@
           <span id="username">{{chat.name}}:</span>
           <span id="timestamp">3 days ago</span>
 
-          <p id="chatMessage">{{chat.message}}</p>
+          <p id="chatMessage" [innerHTML]="chat.message"></p>
         </div>
       </div>
     </div>
@@ -40,6 +40,9 @@
 
   <div>
     <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+    <app-photos></app-photos>
+
+
   </div>
 
 </footer>

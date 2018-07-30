@@ -4,6 +4,9 @@ import {
   HttpEventType,
   HttpResponse
 } from "../../../../node_modules/@angular/common/http";
+import { ChatService } from "../../chat.service";
+import { summaryFileName } from "../../../../node_modules/@angular/compiler/src/aot/util";
+import { Chat } from "../../chat";
 
 @Component({
   selector: "form-photos",
@@ -15,7 +18,10 @@ export class FormPhotosComponent implements OnInit {
   selectedFiles: FileList;
   currentFileUpload: File;
   progress: { percentage: number } = { percentage: 0 };
-  constructor(private photosService: PhotosService) {}
+  constructor(
+    private photosService: PhotosService,
+    private chatService: ChatService
+  ) {}
 
   ngOnInit() {}
 
@@ -27,6 +33,18 @@ export class FormPhotosComponent implements OnInit {
     } else {
       alert("invalid format!");
     }
+  }
+
+  submitImage() {
+    let newChat = new Chat();
+    newChat.message =
+      "<img src= 'http://localhost:8080/photos/" +
+      this.currentFileUpload.name +
+      "' height = '40'>";
+    this.chatService.addChat(newChat).subscribe(() => {
+      //this.getChat();
+      //this.currentChat = new Chat();
+    });
   }
 
   upload() {

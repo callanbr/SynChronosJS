@@ -62,6 +62,15 @@ export class ChatComponent implements OnInit {
     });
   }
 
+  // submitImage() {
+  //   let imageChat = new Chat();
+  //   imageChat.message =
+  //   this.chatService.addChat(imageChat).subscribe(() => {
+  //     this.getChat();
+  //     this.currentChat = new Chat();
+  //   });
+  // }
+
   ngOnInit() {
     this.getChat();
   }
