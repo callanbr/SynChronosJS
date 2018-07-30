@@ -12,12 +12,17 @@ export class NavComponent implements OnInit {
   profileId: number;
   // calendarId: number;
 
-
   ngOnInit() {
+    var OutOfLocalStorage = localStorage.getItem("currentUser");
+    var Parseing = JSON.parse(OutOfLocalStorage);
+    if (OutOfLocalStorage == null){
+    } else 
+    {this.profileId = Parseing.Id;
+    }
     
-    var OutOfLocalStorage= (localStorage.getItem('currentUser'));
-    var Parseing = JSON.parse (OutOfLocalStorage);
-    this.profileId=(Parseing.Id);
+    
+
     // this.calendarId=(Parseing.Id);
-  }
+  
+}
 }
