@@ -1,7 +1,7 @@
-<body>
-<img [src]="profilePic" *ngIf="profilePic">
+<div id="body">
 
-<form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST">
+
+  <img [src]="profilePic" *ngIf="profilePic">
   <div class="row">
     <div class="col">
       <h1> Name: </h1>
@@ -10,18 +10,21 @@
   </div>
   <div class="row">
     <div class="col">
-    <h1>Email: </h1>
+      <h1>Email: </h1>
       <input type="text" class="form-control" name="email" id="email" placeholder="email" [(ngModel)]="currentProfile.email">
     </div>
   </div>
 
   <!-- <button type="submit" (click)="submitProfile(this.form)">Edit Profile</button> -->
-</form>
-
-</body>
 
 
+</div>
 
+
+
+
+<!-- <form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST"> -->
+/
 
 <!-- this is ryan's photo code  -->
 <!-- <div class="container" style="width:400px">
