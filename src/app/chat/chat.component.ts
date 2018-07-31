@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ChatService } from "../chat.service";
 import { Chat } from "../chat";
-import { Profile } from "../profile";
+// import { Profile } from "../profile";
 import { Calendar } from "../calendar";
 import {
   trigger,
@@ -62,6 +62,15 @@ export class ChatComponent implements OnInit {
       this.currentChat = new Chat();
     });
   }
+
+  // submitImage() {
+  //   let imageChat = new Chat();
+  //   imageChat.message =
+  //   this.chatService.addChat(imageChat).subscribe(() => {
+  //     this.getChat();
+  //     this.currentChat = new Chat();
+  //   });
+  // }
 
   ngOnInit() {
     this.getChat();

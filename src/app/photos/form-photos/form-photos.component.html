@@ -4,8 +4,11 @@
     {{progress.percentage}}%</div>
 </div>
 
-<label class="btn btn-default">
-  <input type="file" (change)="selectFile($event)">
-</label>
+<button class="btn btn-default">
+  <input type="file" (change)="selectFile($event)" (change)="!selectedFiles" (change)="upload()">
+</button>
+{{currentFileUpload.name}}
 
-<button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+<button (click)="submitImage()">Send</button>
+
+<!-- <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button> -->

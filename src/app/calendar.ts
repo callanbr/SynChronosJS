@@ -4,5 +4,6 @@ export class CEvent {
   end: String;
   title: String;
   color: String;
+  map: any;
 }
 export class Calendar {}

@@ -21,8 +21,9 @@
           <span id="timestamp">{{chat.timestamp}}</span>
           <span id="events"> {{Cevent.title}}</span>
 
-          <p id="chatMessage">{{chat.message}}</p>
+          <!-- <p id="chatMessage">{{chat.message}}</p> -->
 
+          <p id="chatMessage" [innerHTML]="chat.message"></p>
         </div>
       </div>
     </div>
@@ -42,6 +43,9 @@
 
   <div>
     <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+    <app-photos></app-photos>
+
+
   </div>
 
 </footer>
