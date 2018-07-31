@@ -1,9 +1,10 @@
-body {
+#body {
   position: fixed;
   height: 100%;
   background: #313131;
   float: left;
   margin-top: 82px;
+  opacity: 0.5;
 
   ul {
     list-style-type: none;

@@ -1,11 +1,11 @@
 <!DoctypeHTML>
-<html id="pg">
+<div id="pg">
 
 <app-groups>
 
 </app-groups>
 
-<body id="scrl">
+<div id="scrl">
 
 
   <div id="chatAll">
@@ -18,14 +18,17 @@
             <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg">
           </span>
           <span id="username">{{chat.name}}:</span>
-          <span id="timestamp">3 days ago</span>
+          <span id="timestamp">{{chat.timestamp}}</span>
+          <span id="events"> {{Cevent.title}}</span>
+
+          <!-- <p id="chatMessage">{{chat.message}}</p> -->
 
           <p id="chatMessage" [innerHTML]="chat.message"></p>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 
 
 
@@ -48,7 +51,7 @@
 </footer>
 
 
-</html>
+</div>
 
 
 

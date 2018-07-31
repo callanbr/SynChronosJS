@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+html {
+  height: 100%;
+  width: 100%;
+  min-height: 600px;
+  // min-width: 550px;
+  background-color: whitesmoke;
+}
+
+body.dark-mode {
+  background: #424242;
+  color: whitesmoke;
+  font-family: Open-Sans;
+  div.info {
+    border: solid 2px;
+    border-color: goldenrod;
+  }
+}
+body.dark-mode button {
+  background-color: #18272f;
+  color: white;
+}
+
+body.light-mode {
+  background: whitesmoke;
+  font-family: Open-Sans;
+  div.info {
+    border: solid 2px;
+    border-color: transparent;
+  }
+}
+body.light-mode button {
+  background-color: whitesmoke;
+}
