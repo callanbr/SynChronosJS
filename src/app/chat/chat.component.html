@@ -1,16 +1,21 @@
 <!DoctypeHTML>
-<div id="pg">
+<html id="pg">
 
   <app-groups>
 
   </app-groups>
 
+<<<<<<< HEAD
   <div id="scrl">
+=======
+<body id="scrl">
+>>>>>>> cadce9f36f2175edb20ee122ce8a2dc808e70ced
 
 
     <div id="chatAll">
 
 
+<<<<<<< HEAD
       <div [@myStagger]="chats" id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
         <div *ngFor="let chat of chats" class="list-group">
           <div>
@@ -26,10 +31,26 @@
 
             <p id="chatMessage" [innerHTML]="chat.message"></p>
           </div>
+=======
+    <div id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <div *ngFor="let chat of chats" class="list-group">
+        <div>
+          <span>
+            <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg">
+          </span>
+          <span id="username">{{chat.name}}:</span>
+          <span id="timestamp">3 days ago</span>
+
+          <p id="chatMessage">{{chat.message}}</p>
+>>>>>>> cadce9f36f2175edb20ee122ce8a2dc808e70ced
         </div>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+</body>
+>>>>>>> cadce9f36f2175edb20ee122ce8a2dc808e70ced
 
 
 
@@ -42,17 +63,23 @@
         aria-label="" aria-describedby="basic-addon1">
     </div>
 
+<<<<<<< HEAD
     <div>
       <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
       <app-photos></app-photos>
 
 
     </div>
+=======
+  <div>
+    <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+  </div>
+>>>>>>> cadce9f36f2175edb20ee122ce8a2dc808e70ced
 
   </footer>
 
 
-</div>
+</html>
 
 
 
