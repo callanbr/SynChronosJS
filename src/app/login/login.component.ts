@@ -31,6 +31,7 @@ export class loginComponent implements OnInit {
             Id: data.id
           })
         );
+        document.location.href = "/";
       });
     });
   }
