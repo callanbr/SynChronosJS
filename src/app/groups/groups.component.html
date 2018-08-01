@@ -24,14 +24,14 @@
       </a>
     </li>
     <li>
-      <div *ngFor="let groups of group" class="list-groups">
+      <div *ngFor="let groups of group" class="list-group">
         <div>
 
           <span>
             <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
           </span>
           <span id="groupname-title">
-            <a href="">{{groups.groupname}}: </a>
+            <a routerLink="/chat/{{groups.id}}">{{groups.groupname}}: {{groups.id}} </a>
           </span>
 
 
