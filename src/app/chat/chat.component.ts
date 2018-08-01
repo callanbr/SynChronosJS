@@ -4,6 +4,7 @@ import { Chat } from "../chat";
 import { ProfileDTO } from "../profile/ProfileDTO";
 import { ProfileService } from "../profile/profile.service";
 import { Calendar } from "../calendar";
+import { CalendarService } from "../calendar.service";
 import {
   trigger,
   style,
