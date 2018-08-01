@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Profile } from "../profile";
+// import { Profile } from "../profile";
 
 @Component({
   selector: "app-nav",
@@ -9,5 +9,17 @@ import { Profile } from "../profile";
 export class NavComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  profileId: number;
+  // calendarId: number;
+
+  ngOnInit() {
+    var OutOfLocalStorage = localStorage.getItem("currentUser");
+    var Parseing = JSON.parse(OutOfLocalStorage);
+    if (OutOfLocalStorage == null) {
+    } else {
+      this.profileId = Parseing.Id;
+    }
+
+    // this.calendarId=(Parseing.Id);
+  }
 }

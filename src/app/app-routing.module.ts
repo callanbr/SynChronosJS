@@ -15,15 +15,23 @@ import { AuthGuard } from "./guards";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
-  { path: "calendar", component: CalendarComponent },
-  { path: "chat", component: ChatComponent },
+  { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "calendar", component: CalendarComponent, canActivate: [AuthGuard] },
+  { path: "chat", component: ChatComponent, canActivate: [AuthGuard] },
   { path: "chat/:id", component: ChatComponent },
-  { path: "photos", component: PhotosComponent },
-  { path: "events", component: EventsComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "mainprofile", component: MainprofileComponent },
-  { path: "settings", component: SettingsComponent },
+  { path: "photos", component: PhotosComponent, canActivate: [AuthGuard] },
+  { path: "events", component: EventsComponent, canActivate: [AuthGuard] },
+  {
+    path: "profile/:id",
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "mainprofile",
+    component: MainprofileComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: "settings", component: SettingsComponent, canActivate: [AuthGuard] },
   { path: "login", component: loginComponent },
   { path: "", component: loginComponent, canActivate: [AuthGuard] }
 ];
