@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ChatService } from "../chat.service";
 import { Chat } from "../chat";
 import { ProfileDTO } from "../profile/ProfileDTO";
-import {ProfileService} from "../profile/profile.service";
+import { ProfileService } from "../profile/profile.service";
 import { Calendar } from "../calendar";
 import {
   trigger,
@@ -13,6 +13,15 @@ import {
   query,
   stagger
 } from "@angular/animations";
+
+import { Observable } from "../../../node_modules/rxjs";
+
+import { DomSanitizer } from "../../../node_modules/@angular/platform-browser";
+import {
+  ActivatedRoute,
+  ParamMap
+} from "../../../node_modules/@angular/router";
+import { switchMap } from "../../../node_modules/rxjs/operators";
 @Component({
   selector: "app-chat",
   templateUrl: "./chat.component.html",
@@ -42,9 +51,20 @@ import {
   // ]
 })
 export class ChatComponent implements OnInit {
-  constructor(private chatService: ChatService) {}
+  showFile = false;
+  fileUploads: Observable<string[]>;
+
+  currentProfile: ProfileDTO = new ProfileDTO();
+  constructor(
+    private chatService: ChatService,
+    private profileService: ProfileService,
+    private domSanitizer: DomSanitizer,
+    private route: ActivatedRoute
+  ) {}
   chats: Chat;
   currentChat: Chat = new Chat();
+  profile: ProfileDTO;
+  profilePic: string;
   getChat() {
     this.chatService.getChat().subscribe(c => {
       this.chats = c;
@@ -64,6 +84,21 @@ export class ChatComponent implements OnInit {
     });
   }
 
+  getProfile() {
+    this.route.paramMap
+      .pipe(
+        switchMap((params: ParamMap) =>
+          this.profileService.getProfile(+params.get("id"))
+        )
+      )
+      .subscribe(p => {
+        this.profile = p;
+        this.currentProfile = p;
+        this.profilePic = p.image;
+        console.log(p);
+      });
+  }
+
   // submitImage() {
   //   let imageChat = new Chat();
   //   imageChat.message =
@@ -75,6 +110,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     this.getChat();
+    this.getProfile();
   }
 }
 

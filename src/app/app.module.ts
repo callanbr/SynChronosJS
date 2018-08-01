@@ -45,6 +45,7 @@ import {
 // import { ProfilePhotoFormComponent } from "./profile/profile-photo-form/profile-photo-form.component";
 // import { ProfilePhotoService } from "./profilePhoto.service";
 import { DropdownComponent } from "./dropdown/dropdown.component";
+import { DarkmodeComponent } from './darkmode/darkmode.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig([
@@ -79,7 +80,8 @@ export function getAuthServiceConfigs() {
     // ProfilePhotoFormComponent,
     // ProfilePhotoListComponent,
     // ProfilePhotoDetailComponent,
-    DropdownComponent
+    DropdownComponent,
+    DarkmodeComponent
   ],
 
   imports: [
