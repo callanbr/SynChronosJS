@@ -11,20 +11,21 @@ import { NavComponent } from "./nav/nav.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { loginComponent } from "./login/login.component";
-import { AuthGuard } from "./guards"; 
+import { AuthGuard } from "./guards";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "calendar", component: CalendarComponent },
   { path: "chat", component: ChatComponent },
+  { path: "chat/:id", component: ChatComponent },
   { path: "photos", component: PhotosComponent },
   { path: "events", component: EventsComponent },
   { path: "profile", component: ProfileComponent },
   { path: "mainprofile", component: MainprofileComponent },
   { path: "settings", component: SettingsComponent },
   { path: "login", component: loginComponent },
-  { path: "", component: loginComponent, canActivate: [AuthGuard]}
+  { path: "", component: loginComponent, canActivate: [AuthGuard] }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

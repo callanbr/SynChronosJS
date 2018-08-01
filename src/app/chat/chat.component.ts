@@ -11,38 +11,44 @@ import {
   query,
   stagger
 } from "@angular/animations";
+import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-chat",
   templateUrl: "./chat.component.html",
-  styleUrls: ["./chat.component.scss"]
-  // animations: [
-  //   trigger("myStagger", [
-  //     transition("* <=> *", [
-  //       query(
-  //         ":enter",
-  //         [
-  //           style({ opacity: 0, transform: "translateY(50px)" }),
-  //           stagger(
-  //             "5ms",
-  //             animate(
-  //               "1000ms ease-out",
-  //               style({ opacity: 1, transform: "translateY(0px)" })
-  //             )
-  //           )
-  //         ],
-  //         { optional: true }
-  //       ),
-  //       query(":leave", animate("10ms", style({ opacity: 0 })), {
-  //         optional: true
-  //       })
-  //     ])
-  //   ])
-  // ]
+  styleUrls: ["./chat.component.scss"],
+  animations: [
+    trigger("myStagger", [
+      transition("* <=> *", [
+        query(
+          ":enter",
+          [
+            style({ opacity: 50, transform: "translateY(0px)" }),
+            stagger(
+              "5ms",
+              animate(
+                "1ms ease-out",
+                style({ opacity: 1, transform: "translateY(0px)" })
+              )
+            )
+          ],
+          { optional: true }
+        ),
+        query(":leave", animate("10ms", style({ opacity: 0 })), {
+          optional: true
+        })
+      ])
+    ])
+  ]
 })
 export class ChatComponent implements OnInit {
-  constructor(private chatService: ChatService) {}
+  constructor(
+    private chatService: ChatService,
+    private route: ActivatedRoute
+  ) {}
   chats: Chat;
   currentChat: Chat = new Chat();
+  routeParameter: String;
+
   getChat() {
     this.chatService.getChat().subscribe(c => {
       this.chats = c;
@@ -56,25 +62,27 @@ export class ChatComponent implements OnInit {
     });
   }
   submitChat() {
+    this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
     this.chatService.addChat(this.currentChat).subscribe(() => {
       this.getChat();
       this.currentChat = new Chat();
+      console.log(this.route.snapshot.paramMap.get("id"));
     });
   }
 
-  // submitImage() {
-  //   let imageChat = new Chat();
-  //   imageChat.message =
-  //   this.chatService.addChat(imageChat).subscribe(() => {
-  //     this.getChat();
-  //     this.currentChat = new Chat();
-  //   });
-  // }
-
   ngOnInit() {
     this.getChat();
+    this.routeParameter = this.route.snapshot.paramMap.get("id");
   }
 }
+// submitImage() {
+//   let imageChat = new Chat();
+//   imageChat.message =
+//   this.chatService.addChat(imageChat).subscribe(() => {
+//     this.getChat();
+//     this.currentChat = new Chat();
+//   });
+// }
 
 // function scrolldown() {
 //   function printSomething() {
