@@ -18,44 +18,46 @@
             <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg">
           </span>
           <span id="username">{{chat.name}}:</span>
-          <span id="timestamp">3 days ago</span>
+          <span id="timestamp" *ngFor="let chat of chats">{{chat.timestamp}} </span>
+          <!-- <span id="events"> {{Cevent.title}}</span> -->
 
           <p id="chatMessage">{{chat.message}}</p>
         </div>
       </div>
     </div>
   </div>
-</body>
 
 
 
 
-<footer>
+  <footer>
 
-  <div class="input-group mb-3" id="sendMessage">
-    <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
-    <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="Write a message..."
-      aria-label="" aria-describedby="basic-addon1">
-  </div>
+    <div class="input-group mb-3" id="sendMessage">
+      <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
+      <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="Write a message..."
+        aria-label="" aria-describedby="basic-addon1">
+    </div>
 
-  <div>
-    <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
-  </div>
-
-</footer>
+    <div>
+      <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
+      <app-photos></app-photos>
 
 
-</html>
+    </div>
 
-
+  </footer>
 
 
 
 
-<!-- <small>Donec id elit non mi porta.</small> -->
-<!-- </a> -->
 
-<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+
+
+
+  <!-- <small>Donec id elit non mi porta.</small> -->
+  <!-- </a> -->
+
+  <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">List group item heading</h5>
                   <small class="text-muted">3 days ago</small>
@@ -63,7 +65,7 @@
                 <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small class="text-muted">Donec id elit non mi porta.</small>
               </a> -->
-<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">List group item heading</h5>
                   <small class="text-muted">3 days ago</small>
@@ -71,9 +73,9 @@
                 <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small class="text-muted">Donec id elit non mi porta.</small>
               </a> -->
-<!-- </div> -->
+  <!-- </div> -->
 
-<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List of groups and friends</h5>
       <small class="text-muted"> last online 3 days ago</small>
@@ -84,9 +86,9 @@
   </a> -->
 
 
-<!-- <div class "MG-BOX" id="mg-box">
+  <!-- <div class "MG-BOX" id="mg-box">
       </div> -->
 
 
 
-<!-- singlelne textbar with submit button -->
+  <!-- singlelne textbar with submit button -->
