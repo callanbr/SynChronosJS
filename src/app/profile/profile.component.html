@@ -18,33 +18,23 @@
 
   </div> -->
 
-
-
-<div class="avatar"></div>
-<h1>Gianluca Pirrera</h1>
+<div id="body">
+ 
+<div class="avatar"><img [src]="profilePic" *ngIf="profilePic"></div>
+<h1><input readonly="readonly" [(ngModel)]="currentProfile.name"></h1>
 
 <div class="container">
 
-  <ul class="social">
+<ul class="social">
 
-    <li class="facebook">
-      <a href="#" class="entypo-facebook"></a>
-    </li>
-    <li class="twitter">
-      <a href="#" class="entypo-twitter"></a>
-    </li>
-    <li class="sociali">
-      <a href="#" class="entypo-mouse"></a>
-    </li>
-    <li class="codepen">
-      <a href="#" class="entypo-code"></a>
-    </li>
-    <li class="mail">
-      <a href="#" class="entypo-mail"></a>
-    </li>
+  <li class="facebook"><a href="#" class="entypo-facebook"></a></li>
+   <li class="sociali">/li>
 
-  </ul>
+  <li class="mail"><a href="#" class="entypo-mail"></a></li>
 
+</ul>
+
+</div>
 </div>
 
 

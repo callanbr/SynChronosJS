@@ -14,7 +14,6 @@ import {
   query,
   stagger
 } from "@angular/animations";
-
 import { Observable } from "../../../node_modules/rxjs";
 
 import { DomSanitizer } from "../../../node_modules/@angular/platform-browser";
@@ -33,11 +32,11 @@ import { switchMap } from "../../../node_modules/rxjs/operators";
   //       query(
   //         ":enter",
   //         [
-  //           style({ opacity: 0, transform: "translateY(50px)" }),
+  //           style({ opacity: 50, transform: "translateY(0px)" }),
   //           stagger(
   //             "5ms",
   //             animate(
-  //               "1000ms ease-out",
+  //               "1ms ease-out",
   //               style({ opacity: 1, transform: "translateY(0px)" })
   //             )
   //           )
@@ -64,6 +63,8 @@ export class ChatComponent implements OnInit {
   ) {}
   chats: Chat;
   currentChat: Chat = new Chat();
+  routeParameter: String;
+
   profile: ProfileDTO;
   profilePic: string;
   getChat() {
@@ -79,9 +80,11 @@ export class ChatComponent implements OnInit {
     });
   }
   submitChat() {
+    this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
     this.chatService.addChat(this.currentChat).subscribe(() => {
       this.getChat();
       this.currentChat = new Chat();
+      console.log(this.route.snapshot.paramMap.get("id"));
     });
   }
 
@@ -110,10 +113,19 @@ export class ChatComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.getChat();
     this.getProfile();
+    this.getChat();
+    this.routeParameter = this.route.snapshot.paramMap.get("id");
   }
 }
+// submitImage() {
+//   let imageChat = new Chat();
+//   imageChat.message =
+//   this.chatService.addChat(imageChat).subscribe(() => {
+//     this.getChat();
+//     this.currentChat = new Chat();
+//   });
+// }
 
 // function scrolldown() {
 //   function printSomething() {
