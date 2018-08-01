@@ -26,6 +26,8 @@ import {
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap/modal/modal";
 import { CalendarService } from "../calendar.service";
 import { CEvent } from "../calendar";
+import { ActivatedRoute, ParamMap } from "@angular/router";
+import { switchMap } from "rxjs/operators";
 // import { CalendarEvent } from "../calendar";
 const colors: any = {
   red: {
@@ -55,7 +57,7 @@ export class CalendarComponent implements OnInit {
   view: string = "month";
 
   viewDate: Date = new Date();
-
+  profileId: number; 
   modalData: {
     action: string;
     event: CalendarEvent;
@@ -117,7 +119,8 @@ export class CalendarComponent implements OnInit {
 
   constructor(
     private modal: NgbModal,
-    private calendarService: CalendarService
+    private calendarService: CalendarService,
+    private route: ActivatedRoute        
   ) {}
   // constructor(private calendarService: CalendarService) {}
 
@@ -166,26 +169,28 @@ export class CalendarComponent implements OnInit {
     this.refresh.next();
   }
   saveEvent(newEvent) {
-    newEvent.color = newEvent.color.primary;
-    this.calendarService.addEvent(newEvent).subscribe();
+    this.calendarService.addEvent({
+      "start": newEvent.start,
+      "end": newEvent.end,
+      "title": newEvent.title,
+      "color": newEvent.color.primary,
+      "profile": { "id" : this.profileId }
+    }).subscribe();
   }
 
   ngOnInit() {
-    // this.calendarService.getEvents().subscribe(data => {
-    //   this.events = data.map(d => {
-    //     CEvent
-
-    //   });
-    // this.refresh.next();
-    // });
-
-    this.calendarService.getEvents().subscribe(data => {
+    this.route.paramMap.pipe(
+     switchMap((params: ParamMap) =>
+      this.calendarService.getEvents(+params.get("id")))).subscribe(data => { 
+      
       this.events = data.map(d =>
         //ignore this error it will run
+        
         Object.assign(d, { start: new Date(d.start), end: new Date(d.end) })
       );
       this.refresh.next();
     });
-    this.addEvent();
+  
+    this.route.paramMap.subscribe((params: ParamMap) => this.profileId= +params.get("id"));
   }
 }

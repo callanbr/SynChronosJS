@@ -23,9 +23,10 @@ export class CalendarService {
     return this.http.post("http://localhost:8080/calendar", calendar);
   }
 
-  getEvents(): Observable<CEvent> {
-    return this.http.get<CEvent>("http://localhost:8080/calendar");
+  getEvents(profileId : number): Observable<CEvent> {
+    return this.http.get<CEvent>("http://localhost:8080/calendar/"+ profileId);
   }
 
   constructor(private http: HttpClient) {}
+ 
 }
