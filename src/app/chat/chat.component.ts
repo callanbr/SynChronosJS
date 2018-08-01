@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ChatService } from "../chat.service";
 import { Chat } from "../chat";
-// import { Profile } from "../profile";
+import { ProfileDTO } from "../profile/ProfileDTO";
+import {ProfileService} from "../profile/profile.service";
 import { Calendar } from "../calendar";
 import {
   trigger,
