@@ -36,7 +36,7 @@
 
 /* entypo */
 [class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
+  font-family: "entypo", sans-serif;
 }
 
 // body {
@@ -60,167 +60,134 @@
 //   box-sizing: border-box;
 // }
 
+#body {
+  padding-top: 100px;
+  background-color: whitesmoke;
+  height: 100vh;
+}
 .avatar {
-  background-image: url("https://i.imgur.com/d598nSK.png");
+  // background-image: url("../../img/christopher.jpg");
   background-size: cover;
   border-radius: 100%;
-  margin: 4vw auto 2vw auto;
-  width: 10rem;
-  height: 10rem;
-  box-shadow: 0 0 0 8px rgba(255,255,255,0.2);
+  margin: 0 auto 2vw auto;
+  width: 15vw;
+  height: 15vw;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
   transition: all 0.5s ease-in-out;
+  img {
+    height: 15vw;
+    width: 15vw;
+    border-radius: 100px;
+  }
 }
 
 .avatar:hover {
-  box-shadow: 0 0 0 12px rgba(255,255,255,0.6);
+  box-shadow: 0 0 0 12px #401a7e;
 }
 
 h1 {
-  text-align:center;
-  font-size:24px;
-  font-weight:300;
-  color:#ffffff;
-  text-shadow: 1px 1px 2px #444444;
+  text-align: center;
+  font-size: 3.5vw;
+  font-weight: 200;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px #401a7e;
   margin: 0;
 }
 
-h3 {
-  text-align:center;
-  font-size:16px;
-  font-weight:300;
-  color:#ffffff;
-  text-shadow: 1px 1px 2px #444444;
-  margin: 0.5em 0 1em 0;
-}
-
-p {
-  text-align:center;
-  font-size:12px;
-  font-weight:300;
-  color:#ffffff;
-  text-shadow: 1px 1px 2px #444444;
-}
-
 .container {
-	left: 50%;
-	margin:6em 0 0 -108px;
-	position: absolute;
+  left: 50%;
+  margin: 6em 0 0 -108px;
+  position: absolute;
 }
 
 .social {
-	position: relative;
-	height: 3em;
-	width: 13.5em;
+  position: relative;
+  height: 3em;
+  width: 13.5em;
 }
 
 .social li {
-  border-radius:10px;
-	display: block;
-	height: 4em;
-	line-height: 4em;
-	margin: -2.2em;
-	position: absolute;
-	transition: all 0.5s ease-in-out;
-	transform: rotate(45deg);
-	text-align: center;
-	width: 4em;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+  border-radius: 10px;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  margin: -2.2em;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  transform: rotate(45deg);
+  text-align: center;
+  width: 4em;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
 .social a {
-	color: #ffffff;
-  text-decoration:none;
-	display: block;
-	height: 4em;
-	line-height: 4em;
-	text-align: center;
-	transform: rotate(-45deg);
-	width: 4em;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  transform: rotate(-45deg);
+  width: 4em;
 }
 
-@media only screen 
-and (max-width : 320px) {
+@media only screen and (max-width: 320px) {
+  .container {
+    left: 50%;
+    margin: 5em 0 0 -64px;
+    position: absolute;
+  }
 
-.container {
-left: 50%;
-margin: 5em 0 0 -64px;
-position: absolute;
-}
+  .social {
+    position: relative;
+    height: 3em;
+    width: 10em;
+  }
 
-.social {
-	position: relative;
-	height: 3em;
-	width: 10em;
-}
+  .social li {
+    height: 3em;
+    line-height: 3em;
+    width: 3em;
+  }
 
-.social li {
-	height: 3em;
-	line-height: 3em;
-	width: 3em;
-}
-
-.social a {
-	height: 3em;
-	line-height: 3em;
-	width: 3em;	
-}
-
+  .social a {
+    height: 3em;
+    line-height: 3em;
+    width: 3em;
+  }
 }
 
 .facebook {
-  background:rgba(255,255,255,0.1);
-	left: 0;
-	top: 0%;
+  background: #401a7e;
+  left: 0;
+  top: 0%;
 }
 
-.facebook:hover{
-  background:#155b9d;
+.facebook:hover {
+  background: #155b9d;
   box-shadow: 0 0 0 2px #155b9d;
 }
 
-.twitter {
-  background:rgba(255,255,255,0.1);
-	bottom: 0;
-	left: 25%;
-}
-
-.twitter:hover{
-  background:#4099FF;
-  box-shadow: 0 0 0 2px #4099FF;
-}
-
-
 .sociali {
-  background:rgba(255,255,255,0.1);
-	left: 50%;
-	top: 0;
+  border: 0.3vw solid;
+  border-color: #401a7e;
+  content: url("../../img/qr.png");
+  left: 50%;
+  top: 0;
 }
 
-.sociali:hover{
-  background:#f34141;
+.sociali:hover {
+  background: #f34141;
   box-shadow: 0 0 0 2px #f34141;
 }
 
-.codepen {
-  background:rgba(255,255,255,0.1);
-	left: 75%;
-	bottom: 0;
-}
-
-.codepen:hover{
-  background:#333333;
-  box-shadow: 0 0 0 2px #333333;
-}
-
-
 .mail {
-  background:rgba(255,255,255,0.1);
+  background: #401a7e;
   left: 100%;
-	top: 0;
+  top: 0;
 }
 
-.mail:hover{
-  background:#1abc9c;
+.mail:hover {
+  background: #1abc9c;
   box-shadow: 0 0 0 2px #1abc9c;
 }
-
