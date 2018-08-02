@@ -167,15 +167,24 @@ export class CalendarComponent implements OnInit {
       }
     });
     this.refresh.next();
+
+
   }
   saveEvent(newEvent) {
-    this.calendarService.addEvent({
+    var yourNewVariable = {
       "start": newEvent.start,
       "end": newEvent.end,
       "title": newEvent.title,
       "color": newEvent.color.primary,
       "profile": { "id" : this.profileId }
-    }).subscribe();
+    };
+    if (newEvent.id != null){
+      (<any>yourNewVariable).id = newEvent.id;
+    } 
+    this.calendarService.addEvent(yourNewVariable).subscribe(calendar => {
+      newEvent.id = (<any>calendar).id;
+    });
+     
   }
 
   ngOnInit() {
@@ -192,5 +201,7 @@ export class CalendarComponent implements OnInit {
     });
   
     this.route.paramMap.subscribe((params: ParamMap) => this.profileId= +params.get("id"));
+    
   }
+  
 }
