@@ -1,9 +1,13 @@
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 // html {
 // }
-#body {
+div.light-mode {
   padding-top: 100px;
-
+  background-color: white;
+}
+div.dark-mode {
+  padding-top: 100px;
+  background-color: black;
 }
 
 // .switch-wrapper {
