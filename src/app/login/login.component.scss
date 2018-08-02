@@ -1,0 +1,98 @@
+#top {
+  background-image: url("../../img/friendsLit.jpg");
+  background-size: 100%;
+  height: 60vmin;
+  background-position: fill;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: White;
+  text-shadow: 2px 2px 10px #401a7e;
+  padding: 100px;
+
+  h1 {
+    font-size: 7vw;
+  }
+  h2 {
+    padding-left: 5%;
+    font-size: 3vw;
+    text-shadow: 1px 2px 5px #401a7e;
+  }
+  button {
+    padding: 8px;
+    margin-left: -5px;
+    border: none;
+    background-color: #401a7e00;
+    text-shadow: 2px 2px 5px #401a7e;
+    color: white;
+    border-radius: 40%;
+    text-decoration: underline;
+  }
+  button:hover {
+    padding: 8px;
+    margin-left: -5px;
+    border: none;
+    background-color: #401a7e00;
+    text-shadow: 4px 4px 8px #401a7e;
+    color: white;
+    border-radius: 40%;
+    text-decoration: underline;
+  }
+}
+
+#back {
+  background-color: whitesmoke;
+  min-height: 600px;
+}
+#bottom {
+  background: linear-gradient(rgba(245, 245, 245, 0.904), whitesmoke);
+  box-shadow: 0 0 35px #401a7e77;
+  margin-top: -10vmin;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 100%;
+  border-radius: 50px;
+  padding: 35px -0px 8vw 0px;
+  display: flex;
+  border: none;
+  #div1 {
+    background-image: url("../../img/blurryFriends.jpg");
+    background-size: 110%;
+    background-position: fill;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 13vw;
+    border-radius: 5%;
+    margin: 0px 0% 0px 4%;
+    // border: solid;
+  }
+  #div2 {
+    background-image: url("../../img/friendsBeach.jpg");
+    background-size: 110%;
+    background-position: fill;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 13vw;
+    margin: 0px 4% 0px 4%;
+    border-radius: 5%;
+    // border: solid;
+  }
+  #div3 {
+    background-image: url("../../img/friendsDark.jpg");
+    background-size: 110%;
+    background-position: fill;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 13vw;
+    margin: 0px 4% 0px 0%;
+    border-radius: 5%;
+    // float: right;
+    // border: solid;
+  }
+}
+
+p {
+  padding-top: 15vw;
+  font-size: 2vw;
+  text-align: center;
+  color: #401a7e;
+}

@@ -1,4 +1,4 @@
-body {
+#body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -8,14 +8,10 @@ h1 {
 }
 
 div.light-mode a:hover {
-  background-color: #ddd;
-  text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
-  color: black;
+  text-shadow: 2px 2px 5px  #401a7e;
 }
 div.dark-mode a:hover {
-  background-color: #ddd;
   text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
-  color: rgb(230, 10, 10);
 }
 
 div.light-mode .icon {
@@ -25,11 +21,6 @@ div.dark-mode .icon {
   display: none;
 }
 
-// @media screen and (max-width: 800px) {
-//   div {
-//     background-color: #31313186;
-//   }
-// }
 @media screen and (max-width: 800px) {
   div.light-mode a:not(:first-child) {
     display: none;
@@ -76,7 +67,7 @@ div.dark-mode .icon {
   }
 }
 div.light-mode {
-  background: linear-gradient(rgba(189, 189, 189, 0.95), #f1f1f1ea);
+  background: linear-gradient(whitesmoke,rgba(245, 245, 245, 0.897));
   position: fixed;
   width: 100%;
   z-index: 99;

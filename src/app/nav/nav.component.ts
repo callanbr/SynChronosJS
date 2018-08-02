@@ -20,10 +20,7 @@ export class NavComponent implements OnInit {
     {this.profileId = Parseing.Id;
     this.calendarId = Parseing.Id; 
     }
-    
-    
 
     // this.calendarId=(Parseing.Id);
-  
-}
+  }
 }

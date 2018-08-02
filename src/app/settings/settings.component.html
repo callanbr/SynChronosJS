@@ -1,31 +1,13 @@
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css'> -->
-
-  <!-- <link rel="stylesheet" href="settings.component.scss"> -->
-
-
-</head>
-
-
-
-
-<body id="body" class="light-mode">
+<div id="body" class="light-mode">
 
   <div class="markdown">
 
-    <div class="switch-wrapper">
-      <input id="switchCheckbox" type="checkbox" onclick="toggleDarkLight()">
-      <span class="switch-label day">Day</span>
-      <label for="switchCheckbox" class="switch"></label>
-      <span class="switch-label night">Night</span>
-    </div>
-
+    <app-darkmode></app-darkmode>
+    <button (click)="socialSignOut('google')">
+      <a href="login">
+        <i class='material-icons'>clear</i>
+        Logout</a>
+    </button>
     <div id="myDiv" class="light-mode">
       Orange Color icon orange v2.svg Wavelength 585–620 nm About these coordinates Color coordinates Hex triplet #FF7F00 sRGBB
       (r, g, b) (255, 127, 0) CMYKH (c, m, y, k) (0, 50, 100, 0) HSV (h, s, v) (30°, 100%, 100%) Source HTML Color Chart
@@ -40,16 +22,4 @@
     </div>
 
   </div>
-
-
-
-
-
-
-
-
-
-</body>
-
-
-</html>
+</div>

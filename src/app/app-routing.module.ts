@@ -11,20 +11,29 @@ import { NavComponent } from "./nav/nav.component";
 import { MainprofileComponent } from "./mainprofile/mainprofile.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { loginComponent } from "./login/login.component";
-import { AuthGuard } from "./guards"; 
+import { AuthGuard } from "./guards";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "calendar/:id", component: CalendarComponent, canActivate: [AuthGuard] },
   { path: "chat", component: ChatComponent, canActivate: [AuthGuard] },
+  { path: "chat/:id", component: ChatComponent },
   { path: "photos", component: PhotosComponent, canActivate: [AuthGuard] },
   { path: "events", component: EventsComponent, canActivate: [AuthGuard] },
-  { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: "mainprofile", component: MainprofileComponent, canActivate: [AuthGuard] },
+  {
+    path: "profile/:id",
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "mainprofile",
+    component: MainprofileComponent,
+    canActivate: [AuthGuard]
+  },
   { path: "settings", component: SettingsComponent, canActivate: [AuthGuard] },
-  { path: "login", component: loginComponent},
-  { path: "", component: loginComponent, canActivate: [AuthGuard]}
+  { path: "login", component: loginComponent },
+  { path: "", component: loginComponent, canActivate: [AuthGuard] }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

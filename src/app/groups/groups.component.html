@@ -1,7 +1,4 @@
-<!DoctypeHTML>
-<html>
-
-<body>
+<div id="body">
   <form name="makeGroup" id="makeGroup" action="http://localhost:8080/groups" method="POST">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -11,7 +8,13 @@
       <input type="text" class="Group-form" placeholder="Create a Group" name="newGroup" id="newGroup" [(ngModel)]="makeGroup.groupname">
     </div>
   </form>
+  <!-- <form>
+    <div>
 
+      <button class="btn btn-outline-secondary" type="submit" id="button-addGroupMember" (click)="addGroupMember()">Add Group Member</button>
+    </div>
+    <input type="text" class "Groupmember-form" placeholder="Add a group member" name="newMember" id="newMember" [(ngModel)]="addGroupMember.user">
+  </form> -->
 
   <ul>
     <li>
@@ -21,14 +24,14 @@
       </a>
     </li>
     <li>
-      <div *ngFor="let groups of group" class="list-groups">
+      <div *ngFor="let groups of group" class="list-group">
         <div>
 
           <span>
             <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
           </span>
           <span id="groupname-title">
-            <a href="">{{groups.groupname}}: </a>
+            <a routerLink="/chat/{{groups.id}}">{{groups.groupname}}: {{groups.id}} </a>
           </span>
 
 
@@ -38,6 +41,4 @@
     </li>
   </ul>
 
-</body>
-
-</html>
+</div>
