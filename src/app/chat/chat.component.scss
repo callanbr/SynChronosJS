@@ -1,7 +1,7 @@
 #pg {
   padding-right: 68px;
   background-color: (#e2e2e2);
-  padding-bottom: 89px;
+  padding-bottom: 10%;
   height: 100%;
   width: 100%;
 }
@@ -10,6 +10,8 @@
   width: 100%;
   // height: 87vh;
   background-color: (#e2e2e275);
+  margin-left: 12.5%;
+  overflow: auto;
 }
 
 #chatBody {
@@ -64,10 +66,10 @@ footer {
   margin-bottom: -16px;
   background-color: #e2e2e2;
   right: 0px;
-  left: 78px;
-  margin-right: 63px;
+  left: 12.5%;
+  margin-right: 0px;
   // width: 100%;
-  background-color: #535353;
+  background-color: #ffdead;
 }
 #sendMessage {
   height: 75px;
@@ -87,6 +89,7 @@ button {
   padding-bottom: 20px;
   margin-right: 4px;
   float: right;
+  color: #401a7e;
 }
 
 // position: absolute;
