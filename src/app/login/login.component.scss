@@ -40,11 +40,12 @@
 }
 
 #back {
-  background-color: whitesmoke;
+  background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+
   min-height: 600px;
 }
 #bottom {
-  background: linear-gradient(rgba(245, 245, 245, 0.904), whitesmoke);
+  background: linear-gradient(rgba(255, 254, 249, 0.877), rgb(248, 245, 229));
   box-shadow: 0 0 35px #401a7e77;
   margin-top: -10vmin;
   margin-left: 10%;
@@ -55,7 +56,7 @@
   display: flex;
   border: none;
   #div1 {
-    background-image: url("../../img/blurryFriends.jpg");
+    background-image: url("../../img/friendsNotLit.jpg");
     background-size: 110%;
     background-position: fill;
     background-repeat: no-repeat;

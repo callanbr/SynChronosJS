@@ -3,36 +3,91 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "../node_modules/flatpickr/dist/flatpickr.min.css";
 
-html {
+html.light-mode {
   height: 100%;
   width: 100%;
   min-height: 600px;
-  // min-width: 550px;
-  background-color: whitesmoke;
+  background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+  #body.light-mode {
+    background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+    #top {
+      h2 {
+        color: rgb(248, 245, 229);
+      }
+    }
+  }
+  #bottom {
+    background: linear-gradient(rgba(255, 254, 249, 0.877), rgb(248, 245, 229));
+    box-shadow: 0 0 35px #401a7e77;
+    #upcoming,
+    #invites {
+      color: #401a7e;
+    }
+    .avatar {
+      box-shadow: 0 0 0 2px #401a7e;
+      transition: all 0.5s ease-in-out;
+    }
+    .avatar:hover {
+      box-shadow: 0 0 0 12px #401a7e;
+    }
+  }
 }
 
-body.dark-mode {
-  background: #424242;
-  color: whitesmoke;
-  font-family: Open-Sans;
-  div.info {
-    border: solid 2px;
+html.dark-mode {
+  height: 100%;
+  width: 100%;
+  min-height: 600px;
+  background: linear-gradient(#2e2e2e, #424242);
+  #body.light-mode {
+    background: linear-gradient(#2e2e2e, #424242);
+    #top {
+      h2 {
+        color: goldenrod;
+      }
+    }
+  }
+  #bottom {
+    background: linear-gradient(#6e6e6ee7, #424242);
+    // box-shadow: 0 0 15px rgba(218, 165, 32, 0.623);
+    border: 2px solid;
     border-color: goldenrod;
+    color: white;
+    #upcoming,
+    #invites {
+      color: goldenrod;
+    }
+    .avatar {
+      box-shadow: 0 0 0 2px goldenrod;
+      transition: all 0.5s ease-in-out;
+    }
+    .avatar:hover {
+      box-shadow: 0 0 0 12px goldenrod;
+    }
   }
-}
-body.dark-mode button {
-  background-color: #18272f;
-  color: white;
 }
 
-body.light-mode {
-  background: whitesmoke;
-  font-family: Open-Sans;
-  div.info {
-    border: solid 2px;
-    border-color: transparent;
-  }
-}
-body.light-mode button {
-  background-color: whitesmoke;
-}
+// body.dark-mode {
+//   background: #424242;
+//   color: whitesmoke;
+//   font-family: Open-Sans;
+//   div.info {
+//     border: solid 2px;
+//     border-color: goldenrod;
+//   }
+// }
+// body.dark-mode button {
+//   background-color: #18272f;
+//   color: white;
+// }
+
+// body.light-mode {
+//   background: whitesmoke;
+//   font-family: Open-Sans;
+//   div.info {
+//     border: solid 2px;
+//     border-color: transparent;
+//   }
+// }
+// body.light-mode button {
+//   background-color: whitesmoke;
+// }
