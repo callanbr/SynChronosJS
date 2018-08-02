@@ -34,14 +34,14 @@
   // });
 
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
+    if ($("#topnNav").offset() > 100) {
+      $("#topNav").addClass("navbar-shrink");
     } else {
-      $("#mainNav").removeClass("navbar-shrink");
+      $("#topNav").removeClass("navbar-shrink");
     }
   };
 
-  // navbarCollapse();
+  navbarCollapse();
 
   $(window).scroll(navbarCollapse);
 })(jQuery);

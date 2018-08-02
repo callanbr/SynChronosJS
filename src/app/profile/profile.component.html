@@ -13,31 +13,27 @@
       <h1>Email: </h1>
       <input readonly="readonly" [(ngModel)]="currentProfile.email">
     </div>
+</div> -->
 
-
-
-  </div> -->
-
-<div id="body">
- 
-<div class="avatar"><img [src]="profilePic" *ngIf="profilePic"></div>
-<h1><input readonly="readonly" [(ngModel)]="currentProfile.name"></h1>
-
-<div class="container">
-
-<ul class="social">
-
-  <li class="facebook"><a href="#" class="entypo-facebook"></a></li>
-   <li class="sociali">/li>
-
-  <li class="mail"><a href="#" class="entypo-mail"></a></li>
-
-</ul>
-
+<div id="body" class="light-mode">
+  <div id="bottom">
+    <div class="avatar">
+      <img [src]="profilePic" *ngIf="profilePic">
+    </div>
+    <h1>
+      <input id="nameInput" readonly="readonly" [(ngModel)]="currentProfile.name">
+    </h1>
+    <ul class="social">
+      <li class="facebook">
+        <a href="#" class="entypo-facebook"></a>
+      </li>
+      <li class="sociali">/li>
+        <li class="mail">
+          <a href="#" class="entypo-mail"></a>
+        </li>
+    </ul>
+  </div>
 </div>
-</div>
-
-
 
 
 

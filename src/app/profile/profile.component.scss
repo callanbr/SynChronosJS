@@ -1,193 +1,223 @@
-// #body {
-//   padding: 100px 75px 0 60px;
-//   background-color: whitesmoke;
-//   height: 80vmax;
-// }
-// img {
-//   float: left;
-//   height: 15vw;
-//   width: 15vw;
-//   border-radius: 100px;
-//   border: 2px solid;
-//   border-color: #401a7e;
-// }
-// form {
-// }
-// input {
-//   float: right;
-//   background-color: transparent;
-//   border: none;
-//   width: 100%;
-//   font-size: 2vw;
-//   padding-bottom: 1vw;
-// }
-// h1 {
-//   font-size: 3vw;
-// }
-// h2 {
-//   font-size: 4vw;
-//   color: #401a7e;
-//   text-shadow: 2px 2px 5px grey;
-//   margin-bottom: 2vw;
-// }
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-/* entypo */
 [class*="entypo-"]:before {
   font-family: "entypo", sans-serif;
 }
+div.light-mode {
+  padding-top: 30vmin;
+  background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+  height: 100vmax;
+  #bottom {
+    // background: linear-gradient(rgba(255, 254, 249, 0.877), rgb(248, 245, 229));
+    // box-shadow: 0 0 35px #401a7e77;
+    margin-top: -10vmin;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 40vmax;
+    min-height: 300px;
+    border-radius: 50px;
+    padding: 35px 0 0 0;
+    .avatar {
+      background-size: cover;
+      border-radius: 100%;
+      margin: 0 auto 2vw auto;
+      width: 15vw;
+      height: 15vw;
 
-// body {
-//   height:100%;
-//   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-//   font-size: 1em;
-//   font-weight: 300;
-//   line-height: 1.5;
-//   letter-spacing: 0.05em;
-//   background-image: linear-gradient(135deg, rgba(52, 152, 219,0.9) 0%,rgba(243, 65, 65, 0.8) 100%), url('https://i.imgur.com/ZWeegbh.jpg');
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   background-attachment: fixed;
-//   background-size: cover;
+      img {
+        height: 15vw;
+        width: 15vw;
+        border-radius: 100%;
+      }
+    }
+    // .avatar:hover {
+      
+    // }
+    h1 {
+      padding-top: 0vw;
+      text-align: center;
+      #nameInput {
+        padding-top: 1vmin;
+        text-align: center;
+        font-size: 3.5vw;
+        font-weight: 200;
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px #401a7e;
+        margin: 0;
+        background: transparent;
+        border: none;
+      }
+    }
+    .social {
+      padding: 15px;
+      position: relative;
+      text-align: center;
+      li {
+        border-radius: 10px;
+        display: inline-block;
+        height: 4vw;
+        transition: all 0.2s ease-in-out;
+        transform: rotate(45deg);
+        text-align: center;
+        width: 4vw;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+        margin: 10px;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          height: 4vw;
+          line-height: 4vw;
+          transform: rotate(-45deg);
+          width: 4vw;
+        }
+      }
+      .facebook {
+        background: #401a7e;
+        // left: 0;
+        top: 0%;
+      }
 
-// }
+      .facebook:hover {
+        background: goldenrod;
+      }
 
-// * {
-//   -moz-box-sizing: border-box;
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
+      .sociali {
+        border: 0.3vw solid;
+        border-color: #401a7e;
+        content: url("../../img/qr.png");
+        // left: 15vw;
+        top: 0;
+        height: 7vw !important;
+        line-height: 7vw !important;
+        width: 7vw !important;
+      }
 
-#body {
-  padding-top: 100px;
-  background-color: whitesmoke;
-  height: 100vh;
-}
-.avatar {
-  // background-image: url("../../img/christopher.jpg");
-  background-size: cover;
-  border-radius: 100%;
-  margin: 0 auto 2vw auto;
-  width: 15vw;
-  height: 15vw;
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-  transition: all 0.5s ease-in-out;
-  img {
-    height: 15vw;
-    width: 15vw;
-    border-radius: 100px;
+      .sociali:hover {
+        border: 0.3vw solid;
+        border-color: goldenrod;
+      }
+
+      .mail {
+        background: #401a7e;
+        // left: 30vw;
+        top: 0;
+      }
+
+      .mail:hover {
+        background: goldenrod;
+      }
+    }
   }
 }
 
-.avatar:hover {
-  box-shadow: 0 0 0 12px #401a7e;
-}
+div.dark-mode {
+  padding-top: 30vmin;
+  background: linear-gradient(#18272f, #25363f);
+  height: 100vmax;
+  #bottom {
+    background: linear-gradient(rgba(255, 254, 249, 0.877), rgb(248, 245, 229));
+    box-shadow: 0 0 35px #401a7e77;
+    margin-top: -10vmin;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 40vmax;
+    min-height: 300px;
+    border-radius: 50px;
+    padding: 35px 0 0 0;
+    border: none;
+    .avatar {
+      background-size: cover;
+      border-radius: 100%;
+      margin: 0 auto 2vw auto;
+      width: 15vw;
+      height: 15vw;
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+      transition: all 0.5s ease-in-out;
+      img {
+        height: 15vw;
+        width: 15vw;
+        border-radius: 100%;
+      }
+    }
+    .avatar:hover {
+      box-shadow: 0 0 0 12px #401a7e;
+    }
+    h1 {
+      padding-top: 0vw;
+      text-align: center;
+      #nameInput {
+        padding-top: 1vmin;
+        text-align: center;
+        font-size: 3.5vw;
+        font-weight: 200;
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px #401a7e;
+        margin: 0;
+        background: transparent;
+        border: none;
+      }
+    }
+    .social {
+      padding: 15px;
+      position: relative;
+      text-align: center;
+      li {
+        border-radius: 10px;
+        display: inline-block;
+        height: 4vw;
+        transition: all 0.2s ease-in-out;
+        transform: rotate(45deg);
+        text-align: center;
+        width: 4vw;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+        margin: 10px;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          height: 4vw;
+          line-height: 4vw;
+          transform: rotate(-45deg);
+          width: 4vw;
+        }
+      }
+      .facebook {
+        background: #401a7e;
+        // left: 0;
+        top: 0%;
+      }
 
-h1 {
-  text-align: center;
-  font-size: 3.5vw;
-  font-weight: 200;
-  color: whitesmoke;
-  text-shadow: 2px 2px 5px #401a7e;
-  margin: 0;
-}
+      .facebook:hover {
+        background: goldenrod;
+      }
 
-.container {
-  left: 50%;
-  margin: 6em 0 0 -108px;
-  position: absolute;
-}
+      .sociali {
+        border: 0.3vw solid;
+        border-color: #401a7e;
+        content: url("../../img/qr.png");
+        // left: 15vw;
+        top: 0;
+        height: 7vw !important;
+        line-height: 7vw !important;
+        width: 7vw !important;
+      }
 
-.social {
-  position: relative;
-  height: 3em;
-  width: 13.5em;
-}
+      .sociali:hover {
+        border: 0.3vw solid;
+        border-color: goldenrod;
+      }
 
-.social li {
-  border-radius: 10px;
-  display: block;
-  height: 4em;
-  line-height: 4em;
-  margin: -2.2em;
-  position: absolute;
-  transition: all 0.5s ease-in-out;
-  transform: rotate(45deg);
-  text-align: center;
-  width: 4em;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-}
+      .mail {
+        background: #401a7e;
+        // left: 30vw;
+        top: 0;
+      }
 
-.social a {
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-  height: 4em;
-  line-height: 4em;
-  text-align: center;
-  transform: rotate(-45deg);
-  width: 4em;
-}
-
-@media only screen and (max-width: 320px) {
-  .container {
-    left: 50%;
-    margin: 5em 0 0 -64px;
-    position: absolute;
+      .mail:hover {
+        background: goldenrod;
+      }
+    }
   }
-
-  .social {
-    position: relative;
-    height: 3em;
-    width: 10em;
-  }
-
-  .social li {
-    height: 3em;
-    line-height: 3em;
-    width: 3em;
-  }
-
-  .social a {
-    height: 3em;
-    line-height: 3em;
-    width: 3em;
-  }
-}
-
-.facebook {
-  background: #401a7e;
-  left: 0;
-  top: 0%;
-}
-
-.facebook:hover {
-  background: #155b9d;
-  box-shadow: 0 0 0 2px #155b9d;
-}
-
-.sociali {
-  border: 0.3vw solid;
-  border-color: #401a7e;
-  content: url("../../img/qr.png");
-  left: 50%;
-  top: 0;
-}
-
-.sociali:hover {
-  background: #f34141;
-  box-shadow: 0 0 0 2px #f34141;
-}
-
-.mail {
-  background: #401a7e;
-  left: 100%;
-  top: 0;
-}
-
-.mail:hover {
-  background: #1abc9c;
-  box-shadow: 0 0 0 2px #1abc9c;
 }

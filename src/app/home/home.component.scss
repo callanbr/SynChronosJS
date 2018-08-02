@@ -5,27 +5,27 @@
   background-position: fill;
   background-repeat: no-repeat;
   overflow: hidden;
-  color: White;
+  // color: White;
   text-shadow: 2px 2px 10px #401a7e;
   padding: 100px;
 
   h1 {
-    font-size: 3vw;
+    font-size: 4vw;
+    // color:white;
   }
   h2 {
     padding-left: 5%;
     font-size: 7vw;
     text-shadow: 1px 2px 5px #401a7e;
+    
   }
 }
 
-#back {
-  background-color: whitesmoke;
-  min-height: 600px;
+#body {
+  // background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+  min-height: 120vh;
 }
 #bottom {
-  background: linear-gradient(rgba(245, 245, 245, 0.904), whitesmoke);
-  box-shadow: 0 0 35px #401a7e77;
   margin-top: -10vmin;
   margin-left: 25%;
   margin-right: 25%;
@@ -36,13 +36,11 @@
   text-align: center;
   #upcoming {
     font-size: 3vw;
-    color: #401a7e;
     margin-top: -1%;
     padding-bottom: 2%;
   }
   #invites {
     font-size: 3vw;
-    color: #401a7e;
     padding-bottom: 2%;
     margin-top: 4%;
   }
@@ -81,6 +79,7 @@
       border: none;
       margin-top: 2%;
       padding: 0.5%;
+      background: transparent;
     }
     .eventDecline {
       font-size: 1.5vw;
@@ -88,6 +87,7 @@
       border: none;
       margin-top: 2%;
       padding: 0.5%;
+      background: transparent;
     }
     .eventGoto {
       font-size: 1.5vw;
@@ -95,6 +95,7 @@
       border: none;
       margin-top: 2%;
       padding: 0.5%;
+      background: transparent;
     }
   }
 }
