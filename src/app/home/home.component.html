@@ -1,8 +1,8 @@
 <div id="body" class="light-mode">
-  
+
   <div id="top">
     <h1>Welcome</h1>
-    <h2>Christopher
+    <h2>{{userName}}
     </h2>
   </div>
 
@@ -11,53 +11,14 @@
 
   <div id="bottom">
     <h1 id="upcoming">Upcoming Events:</h1>
-    <div>
-
-
-      <h3 class='eventName'>
-        Fortnite Party
-        <button class='eventGoto'>
-          <a routerLink="/calendar" class='eventGoto'>
-            <i class='material-icons'>event</i>
-          </a>
-        </button>
-      </h3>
-
-
-    </div>
-
-    <div>
-
-      <i class='eventDate'>Oct. 5th - Oct. 9th</i>
-      <i class='eventTime'> All Day </i>
+    <div *ngFor="let event of events;">
       <div>
-
+        <h3 class='eventName'> {{event.title}}</h3>
       </div>
-
-
-    </div>
-    <h1 id="invites">Event Invites:</h1>
-    <div>
-
-      <h3 class='eventName'>
-        Hike Mt. Everest
-        <button class='eventAccept'>
-          <a routerLink="/calendar" class='eventAccept'>
-            <i class='material-icons'>check</i>
-          </a>
-        </button>
-        <button class='eventDecline'>
-          <a routerLink="/calendar" class='eventDecline'>
-            <i class='material-icons'>clear</i>
-          </a>
-        </button>
-      </h3>
-    </div>
-    <div>
-
-      <i class='eventDate'>Dec. 25th</i>
-      <i class='eventTime'> 9:00am - 3:00pm mst</i>
       <div>
+        <i class='eventDate'>{{event.start}}</i>
+        <i class='eventTime'>{{event.end}} </i>
       </div>
     </div>
   </div>
+</div>
