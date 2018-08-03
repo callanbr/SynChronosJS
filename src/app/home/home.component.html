@@ -1,4 +1,4 @@
-<div id="body" class="light-mode">
+<!-- <div id="body" class="light-mode">
 
   <div id="top">
     <h1>Welcome</h1>
@@ -24,7 +24,7 @@
       </h3>
 
 
-    </div>
+    
 
     <div>
 
@@ -65,3 +65,33 @@
     </div>
   </div>
 </div>
+</div> -->
+
+
+<div id="body" class="light-mode">
+
+    <div id="top">
+      <h1>Welcome</h1>
+      <h2>{{userName}}
+      </h2>
+    </div>
+  
+  
+  
+  
+    <div id="bottom">
+      <h1 id="upcoming">Upcoming Events:</h1>
+      <div *ngFor="let event of events;">
+        <div>
+          <h3 class='eventName'> {{event.title}}  <a routerLink="/calendar/1" class='eventGoto'>
+            <i class='material-icons'>event</i>
+          </a></h3>
+        </div>
+        <div>
+          <i class='eventDate'>{{event.start}}</i>
+          <br>
+          <i class='eventTime'>{{event.end}} </i>
+        </div>
+      </div>
+    </div>
+  </div>
