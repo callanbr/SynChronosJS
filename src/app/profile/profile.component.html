@@ -15,7 +15,10 @@
     </div>
 </div> -->
 
-<div id="body" class="light-mode">
+
+
+
+<!-- <div id="body" class="light-mode">
   <div id="bottom">
     <div class="avatar">
       <img [src]="profilePic" *ngIf="profilePic">
@@ -33,7 +36,39 @@
         </li>
     </ul>
   </div>
-</div>
+</div> -->
+
+
+
+<div id="body" class="light-mode">
+
+  <div id="top">
+    <h1>Your</h1>
+    <h2>Profile
+    </h2>
+  </div>
+
+
+
+
+  <div id="bottom">
+      <div class="avatar">
+          <img [src]="profilePic" *ngIf="profilePic">
+        </div>
+        <h1>
+          <input id="nameInput" readonly="readonly" [(ngModel)]="currentProfile.name">
+        </h1>
+        <ul class="social">
+          <li class="facebook">
+            <a href="#" class="entypo-facebook"></a>
+          </li>
+          <li class="sociali">/li>
+            <li class="mail">
+              <a href="#" class="entypo-mail"></a>
+            </li>
+        </ul>
+    </div>
+  </div>
 
 
 
@@ -42,29 +77,25 @@
 
 
 
+  <!-- <button type="submit" (click)="submitProfile(this.form)">Edit Profile</button> -->
 
-
-
-
-<!-- <button type="submit" (click)="submitProfile(this.form)">Edit Profile</button> -->
-
-<!-- <input type="text" class="form-control" name="name" id="name" placeholder="name" [(ngModel)]="currentProfile.name">
+  <!-- <input type="text" class="form-control" name="name" id="name" placeholder="name" [(ngModel)]="currentProfile.name">
 <input type="text" class="form-control" name="email" id="email" placeholder="email" [(ngModel)]="currentProfile.email">
  -->
 
 
-<!-- <form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST"> -->
+  <!-- <form name="makeProfile" id="makeProfile" action="http://localhost:8080/profile" method="POST"> -->
 
 
-<!-- this is ryan's photo code  -->
-<!-- <div class="container" style="width:400px">
+  <!-- this is ryan's photo code  -->
+  <!-- <div class="container" style="width:400px">
   <div style="color: blue; margin-bottom: 20px">
     <h1>{{title}}</h1>
     <h3>{{description}}</h3>
   </div>
 
   <profile-photo-form></profile-photo-form> -->
-<!-- 
+  <!-- 
   <br/>
   <br/>
 

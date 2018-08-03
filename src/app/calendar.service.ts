@@ -29,6 +29,10 @@ export class CalendarService {
     return this.http.get<CEvent>("http://localhost:8080/calendar/"+ profileId);
   }
 
+  deleteEvents(id:number){
+  return this.http.delete("http://localhost:8080/calendar/" + id);
+ }
+
   constructor(private http: HttpClient) {}
  
 }
