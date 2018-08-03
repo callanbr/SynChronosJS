@@ -65,8 +65,10 @@ export class ChatComponent implements OnInit {
   currentChat: Chat = new Chat();
   routeParameter: String;
 
-  profile: ProfileDTO;
-  profilePic: string;
+  userName : string;
+  userID : number;
+  profilePic : string
+
   getChat() {
     this.chatService.getChat().subscribe(c => {
       this.chats = c;
@@ -88,20 +90,7 @@ export class ChatComponent implements OnInit {
     });
   }
 
-  getProfile() {
-    this.route.paramMap
-      .pipe(
-        switchMap((params: ParamMap) =>
-          this.profileService.getProfile(+params.get("id"))
-        )
-      )
-      .subscribe(p => {
-        this.profile = p;
-        this.currentProfile = p;
-        this.profilePic = p.image;
-        console.log(p);
-      });
-  }
+  
 
   // submitImage() {
   //   let imageChat = new Chat();
@@ -113,12 +102,14 @@ export class ChatComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.getProfile();
-    this.getChat();
-    this.routeParameter = this.route.snapshot.paramMap.get("id");
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser != null) {
+      this.userName = currentUser.name;
+      this.userID = currentUser.Id;
+      this.profilePic = currentUser.image
   }
 }
-// submitImage() {
+// submitImage() {.
 //   let imageChat = new Chat();
 //   imageChat.message =
 //   this.chatService.addChat(imageChat).subscribe(() => {
@@ -135,3 +126,4 @@ export class ChatComponent implements OnInit {
 //     window.scrollTo(0, document.body.scrollHeight);
 //   }
 // }
+}

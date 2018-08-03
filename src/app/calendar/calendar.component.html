@@ -108,7 +108,7 @@
             [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set">
         </td>
         <td>
-          <button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
+          <button class="btn btn-danger" (click)="deleteEvent(index,event.id)">
             Delete
           </button>
         </td>
