@@ -2,7 +2,7 @@
 
   <div id="top">
     <h1>Welcome</h1>
-    <h2>Christopher
+    <h2>{{userName}}
     </h2>
   </div>
 
@@ -30,8 +30,9 @@
 
       <i class='eventDate'>Oct. 5th - Oct. 9th</i>
       <i class='eventTime'> All Day </i>
+    <div *ngFor="let event of events;">
       <div>
-
+        <h3 class='eventName'> {{event.title}}</h3>
       </div>
 
 
@@ -58,6 +59,9 @@
       <i class='eventDate'>Dec. 25th</i>
       <i class='eventTime'> 9:00am - 3:00pm mst</i>
       <div>
+        <i class='eventDate'>{{event.start}}</i>
+        <i class='eventTime'>{{event.end}} </i>
       </div>
     </div>
   </div>
+</div>

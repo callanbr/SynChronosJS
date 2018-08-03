@@ -1,10 +1,16 @@
 #body {
   position: fixed;
   height: 100%;
-  background: #313131;
+  background: #ffdead;
   float: left;
   margin-top: 82px;
-  opacity: 0.5;
+  // opacity: 0.5;
+  margin-right: 90%;
+  overflow: auto;
+
+  #button-addGroup {
+    color: #401a7e;
+  }
 
   ul {
     list-style-type: none;
@@ -14,7 +20,7 @@
 
     li {
       a {
-        color: rgb(253, 202, 71);
+        color: #401a7e;
         padding: 30px;
         display: block;
         // border-radius: 10%;
