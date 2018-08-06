@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
-@import "../node_modules/angular-calendar/css/angular-calendar.css";
+// @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "../node_modules/flatpickr/dist/flatpickr.min.css";
 
 html.light-mode {
@@ -8,6 +8,12 @@ html.light-mode {
   width: 100%;
   min-height: 600px;
   background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+  #body-cal.light-mode {
+    background: linear-gradient(
+      rgb(253, 252, 242),
+      rgb(250, 249, 243)
+    ) !important;
+  }
   #body.light-mode {
     background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
     #top {
@@ -38,6 +44,10 @@ html.light-mode {
       border-color: #401a7e;
     }
   }
+  .cal-month-view .cal-cell-row .cal-cell:hover,
+  .cal-month-view .cal-cell.cal-has-events.cal-open {
+    background-color: #401a7e3a;
+  }
 }
 
 html.dark-mode {
@@ -45,6 +55,9 @@ html.dark-mode {
   width: 100%;
   min-height: 600px;
   background: linear-gradient(#2e2e2e, #424242);
+  #body-cal.light-mode {
+    background: (#8f8f8fe7) !important;
+  }
   #body.light-mode {
     background: linear-gradient(#2e2e2e, #424242);
     #top {
@@ -77,6 +90,10 @@ html.dark-mode {
       border: 2px solid;
       border-color: goldenrod;
     }
+  }
+  .cal-month-view .cal-cell-row .cal-cell:hover,
+  .cal-month-view .cal-cell.cal-has-events.cal-open {
+    background-color: rgba(218, 165, 32, 0.692);
   }
 }
 

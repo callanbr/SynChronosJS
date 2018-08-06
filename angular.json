@@ -22,7 +22,8 @@
             "styles": [
               "src/styles.scss",
               "../synchronosjs/src/css/bootstrap-grid.css",
-              "../synchronosjs/src/css/bootstrap.css"
+              "../synchronosjs/src/css/bootstrap.css",
+              "../synchronosjs/src/css/angular-calendar.css"
             ],
             "scripts": [
               "../synchronosjs/src/js/darkmode.js",
