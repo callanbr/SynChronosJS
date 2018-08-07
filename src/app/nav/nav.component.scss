@@ -1,10 +1,9 @@
-
 h1 {
   font-size: 26px;
 }
 
 div.light-mode a:hover {
-  text-shadow: 2px 2px 5px  #401a7e;
+  text-shadow: 2px 2px 5px #401a7e;
 }
 div.dark-mode a:hover {
   text-shadow: 2px 2px 5px #353535, 0 0 20px #e2e2e2b0, 0 0 5px #353535;
@@ -63,7 +62,10 @@ div.dark-mode .icon {
   }
 }
 div.light-mode {
-  background: linear-gradient( rgba(248, 245, 229, 0.9), rgba(255, 254, 249, 0.4));
+  background: linear-gradient(
+    rgba(248, 245, 229, 0.9),
+    rgba(255, 254, 249, 0.4)
+  );
   position: fixed;
   width: 100%;
   z-index: 99;

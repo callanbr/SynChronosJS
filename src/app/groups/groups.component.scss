@@ -1,10 +1,22 @@
 #body {
   position: fixed;
   height: 100%;
-  background: #313131;
+  background: cornsilk;
+  // background: linear-gradient(
+  //   rgba(248, 245, 229, 0.9),
+  //   rgba(255, 254, 249, 0.4)
+  // );
   float: left;
   margin-top: 82px;
-  opacity: 0.5;
+  // opacity: 0.5;
+  margin-right: 90%;
+  overflow: auto;
+
+  #button-addGroup {
+    color: #401a7e;
+    background-color: #e2e2e2;
+    margin-left: 50%;
+  }
 
   ul {
     list-style-type: none;
@@ -14,14 +26,14 @@
 
     li {
       a {
-        color: rgb(253, 202, 71);
+        color: #401a7e;
         padding: 30px;
         display: block;
         // border-radius: 10%;
         // border: 2px solid transparent;
       }
       a:hover {
-        background-color: rgba(0, 204, 255, 0.288);
+        // background-color: rgba(0, 204, 255, 0.288);
         border-radius: 10%;
         // border: 1px solid;
         // border-color: rgb(253, 202, 71);

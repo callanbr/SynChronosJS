@@ -10,14 +10,15 @@ export class NavComponent implements OnInit {
   constructor() {}
 
   profileId: number;
-  // calendarId: number;
+  calendarId: number;
 
   ngOnInit() {
     var OutOfLocalStorage = localStorage.getItem("currentUser");
     var Parseing = JSON.parse(OutOfLocalStorage);
-    if (OutOfLocalStorage == null) {
-    } else {
-      this.profileId = Parseing.Id;
+    if (OutOfLocalStorage == null){
+    } else 
+    {this.profileId = Parseing.Id;
+    this.calendarId = Parseing.Id; 
     }
 
     // this.calendarId=(Parseing.Id);

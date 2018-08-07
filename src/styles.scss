@@ -30,6 +30,13 @@ html.light-mode {
     .avatar:hover {
       box-shadow: 0 0 0 12px #401a7e;
     }
+    h1 {
+      color: #401a7e;
+    }
+    #settingsButton {
+      border: 2px solid;
+      border-color: #401a7e;
+    }
   }
 }
 
@@ -62,6 +69,13 @@ html.dark-mode {
     }
     .avatar:hover {
       box-shadow: 0 0 0 12px goldenrod;
+    }
+    h1 {
+      color: goldenrod;
+    }
+    #settingsButton {
+      border: 2px solid;
+      border-color: goldenrod;
     }
   }
 }

@@ -14,18 +14,25 @@ import { Http, Headers, Response } from "@angular/http";
 })
 export class CalendarService {
   calendar: CEvent;
+  
 
   addList(calendar: object) {
     return this.http.post("http://localhost:8080/calendar", calendar);
   }
 
+
   addEvent(calendar: Object) {
     return this.http.post("http://localhost:8080/calendar", calendar);
   }
 
-  getEvents(): Observable<CEvent> {
-    return this.http.get<CEvent>("http://localhost:8080/calendar");
+  getEvents(profileId : number): Observable<CEvent> {
+    return this.http.get<CEvent>("http://localhost:8080/calendar/"+ profileId);
   }
 
+  deleteEvents(id:number){
+  return this.http.delete("http://localhost:8080/calendar/" + id);
+ }
+
   constructor(private http: HttpClient) {}
+ 
 }
