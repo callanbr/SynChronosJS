@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 })
 export class HomeService {
   addList(name: object) {
-    return this.http.post("http://localhost:8080/home", name);
+    return this.http.post("https://synchronos-java.herokuapp.com/home", name);
   }
 
   constructor(private http: HttpClient) {}

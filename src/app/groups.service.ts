@@ -15,10 +15,10 @@ import { Http, Headers, Response } from "@angular/http";
 export class GroupsService {
   group: Group;
   getGroup(): Observable<Group> {
-    return this.http.get<Group>("http://localhost:8080/groups");
+    return this.http.get<Group>("https://synchronos-java.herokuapp.com/groups");
   }
   addGroup(group: Group) {
-    return this.http.post("http://localhost:8080/groups", group);
+    return this.http.post("https://synchronos-java.herokuapp.com/groups", group);
   }
 
   constructor(private http: HttpClient) {}
