@@ -5,7 +5,7 @@
     "ng": "ng",
     "heroku-prebuild": "npm install -g http-server",
     "heroku-postbuild": "ng build",
-    "start": "http-server dist/TheApp-web/",
+    "start": "http-server dist/TheApp-Web/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
