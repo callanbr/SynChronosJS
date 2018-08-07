@@ -62,12 +62,14 @@ export class ChatComponent implements OnInit {
   ) {}
   chats: Chat;
   currentChat: Chat = new Chat();
-  routeParameter: String;
+  routeParameter: string;
 
   profile: ProfileDTO;
   profilePic: string;
   getChat() {
-    this.chatService.getChat().subscribe(c => {
+    this.routeParameter = this.route.snapshot.paramMap.get("id");
+    this.chats = null;
+    this.chatService.getChat(parseInt(this.routeParameter)).subscribe(c => {
       this.chats = c;
 
       function printSomething() {
@@ -80,11 +82,16 @@ export class ChatComponent implements OnInit {
   }
   submitChat() {
     this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
-    this.chatService.addChat(this.currentChat).subscribe(() => {
-      this.getChat();
-      this.currentChat = new Chat();
-      console.log(this.route.snapshot.paramMap.get("id"));
-    });
+    this.chatService
+      .addChat(
+        this.currentChat,
+        parseInt(this.route.snapshot.paramMap.get("id"))
+      )
+      .subscribe(() => {
+        this.getChat();
+        this.currentChat = new Chat();
+        console.log("Test:" + this.route.snapshot.paramMap.get("id"));
+      });
   }
 
   getProfile() {
@@ -112,9 +119,13 @@ export class ChatComponent implements OnInit {
   // }
 
   ngOnInit() {
+    console.log("loading chat component");
     this.getProfile();
-    this.getChat();
+    // this.getChat();
     this.routeParameter = this.route.snapshot.paramMap.get("id");
+    this.route.url.subscribe(url => {
+      this.getChat();
+    });
   }
 }
 // submitImage() {
