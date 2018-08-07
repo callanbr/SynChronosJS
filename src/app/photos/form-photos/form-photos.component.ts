@@ -35,34 +35,34 @@ export class FormPhotosComponent implements OnInit {
     }
   }
 
-  submitImage() {
-    let newChat = new Chat();
-    newChat.message =
-      "<img src= 'http://localhost:8080/photos/" +
-      this.currentFileUpload.name +
-      "' height = '40'>";
-    this.chatService.addChat(newChat).subscribe(() => {
-      //this.getChat();
-      //this.currentChat = new Chat();
-    });
-  }
+  // submitImage() {
+  //   let newChat = new Chat();
+  //   newChat.message =
+  //     "<img src= 'http://localhost:8080/photos/" +
+  //     this.currentFileUpload.name +
+  //     "' height = '40'>";
+  //   this.chatService.addChat(newChat).subscribe(() => {
+  //     //this.getChat();
+  //     //this.currentChat = new Chat();
+  //   });
+  // }
 
-  upload() {
-    this.progress.percentage = 0;
+  // upload() {
+  //   this.progress.percentage = 0;
 
-    this.currentFileUpload = this.selectedFiles.item(0);
-    this.photosService
-      .pushFileToStorage(this.currentFileUpload)
-      .subscribe(event => {
-        if (event.type === HttpEventType.UploadProgress) {
-          this.progress.percentage = Math.round(
-            (100 * event.loaded) / event.total
-          );
-        } else if (event instanceof HttpResponse) {
-          console.log("File is completely uploaded!");
-        }
-      });
+  //   this.currentFileUpload = this.selectedFiles.item(0);
+  //   this.photosService
+  //     .pushFileToStorage(this.currentFileUpload)
+  //     .subscribe(event => {
+  //       if (event.type === HttpEventType.UploadProgress) {
+  //         this.progress.percentage = Math.round(
+  //           (100 * event.loaded) / event.total
+  //         );
+  //       } else if (event instanceof HttpResponse) {
+  //         console.log("File is completely uploaded!");
+  //       }
+  //     });
 
-    this.selectedFiles = undefined;
-  }
+  //   this.selectedFiles = undefined;
+  // }
 }

@@ -24,7 +24,7 @@ export class GroupsComponent implements OnInit {
       this.getGroup();
       this.makeGroup = new Group();
     });
-    console.log(this.group);
+    console.log(this.group.groupid);
   }
 
   ngOnInit() {
