@@ -24,7 +24,7 @@
     "@types/gapi": "0.0.35",
     "@types/gapi.auth2": "0.0.47",
     "angular-calendar": "^0.25.2",
-    "angular-flatpickr": "^3.4.0",
+    "angular-flatpickr": "^3.6.3",
     "angular-google-auth2": "^1.0.8",
     "angular-google-signin": "^0.1.5",
     "angular5-social-login": "^1.0.9",

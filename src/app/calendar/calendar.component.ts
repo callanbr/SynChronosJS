@@ -21,7 +21,7 @@ import { Subject, Observable, pipe } from "rxjs";
 import {
   CalendarEvent,
   CalendarEventAction,
-  CalendarEventTimesChangedEvent,
+  CalendarEventTimesChangedEvent
 } from "angular-calendar";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap/modal/modal";
 import { CalendarService } from "../calendar.service";
@@ -34,7 +34,7 @@ import { switchMap } from "rxjs/operators";
   selector: "app-calendar",
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: "./calendar.component.html",
-  styleUrls: ["./calendar.component.css"]
+  styleUrls: ["./calendar.component.scss"]
 })
 export class CalendarComponent implements OnInit {
   //constructor(private calendarService: CalendarService) {}
@@ -43,7 +43,7 @@ export class CalendarComponent implements OnInit {
   view: string = "month";
 
   viewDate: Date = new Date();
-  profileId: number; 
+  profileId: number;
   modalData: {
     action: string;
     event: CalendarEvent;
@@ -74,7 +74,7 @@ export class CalendarComponent implements OnInit {
   constructor(
     private modal: NgbModal,
     private calendarService: CalendarService,
-    private route: ActivatedRoute        
+    private route: ActivatedRoute
   ) {}
   // constructor(private calendarService: CalendarService) {}
 
@@ -107,17 +107,17 @@ export class CalendarComponent implements OnInit {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: "lg" });
   }
-  deleteEvent(index:number,id:number){
-    this.events.splice(index, 1); 
+  deleteEvent(index: number, id: number) {
+    this.events.splice(index, 1);
     this.calendarService.deleteEvents(id).subscribe();
-    this.refresh.next()
+    this.refresh.next();
   }
   addEvent(): void {
     this.events.push({
       title: "New event",
       start: startOfDay(new Date()),
       end: endOfDay(new Date()),
-      color: { primary: "#ad2121", secondary : "" },
+      color: { primary: "#ad2121", secondary: "" },
       draggable: true,
       resizable: {
         beforeStart: true,
@@ -125,41 +125,45 @@ export class CalendarComponent implements OnInit {
       }
     });
     this.refresh.next();
-
-
   }
   saveEvent(newEvent) {
     var yourNewVariable = {
-      "start": newEvent.start,
-      "end": newEvent.end,
-      "title": newEvent.title,
-      "color": newEvent.color.primary,
-      "profile": { "id" : this.profileId }
+      start: newEvent.start,
+      end: newEvent.end,
+      title: newEvent.title,
+      color: newEvent.color.primary,
+      profile: { id: this.profileId }
     };
-    if (newEvent.id != null){
+    if (newEvent.id != null) {
       (<any>yourNewVariable).id = newEvent.id;
-    } 
+    }
     this.calendarService.addEvent(yourNewVariable).subscribe(calendar => {
       newEvent.id = (<any>calendar).id;
     });
-     
   }
 
   ngOnInit() {
-    this.route.paramMap.pipe(
-     switchMap((params: ParamMap) =>
-      this.calendarService.getEvents(+params.get("id")))).subscribe(data => { 
-      
-      this.events = data.map(d =>
-        //ignore this error it will run
-        
-        Object.assign(d, { start: new Date(d.start), end: new Date(d.end), color: { primary: d.color, secondary: ""}  })
-      );
-      this.refresh.next();
-    });
-  
-    this.route.paramMap.subscribe((params: ParamMap) => this.profileId= +params.get("id"));
-    
+    this.route.paramMap
+      .pipe(
+        switchMap((params: ParamMap) =>
+          this.calendarService.getEvents(+params.get("id"))
+        )
+      )
+      .subscribe(data => {
+        this.events = data.map(d =>
+          //ignore this error it will run
+
+          Object.assign(d, {
+            start: new Date(d.start),
+            end: new Date(d.end),
+            color: { primary: d.color, secondary: "" }
+          })
+        );
+        this.refresh.next();
+      });
+
+    this.route.paramMap.subscribe(
+      (params: ParamMap) => (this.profileId = +params.get("id"))
+    );
   }
-  
 }

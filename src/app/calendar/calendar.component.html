@@ -1,20 +1,22 @@
-<div id="body">
+<div id="body-cal" class="light-mode">
 
   <ng-template #modalContent let-close="close">
     <div class="modal-header">
-      <h5 class="modal-title">Event action occurred</h5>
+      <h5 class="modal-title">{{ modalData?.event.title | json }}</h5>
       <button type="button" class="close" (click)="close()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <div>
+      <!-- <div>
         Action:
         <pre>{{ modalData?.action }} </pre>
-      </div>
+      </div> -->
       <div>
-        Event:
-        <pre>{{ modalData?.event | json }}</pre>
+        Start:
+        <pre>{{ modalData?.event.start | json }}</pre> End:
+        <pre>{{ modalData?.event.end | json }}</pre> Created by:
+        <pre id="profileImg">{{ modalData?.event.profile.name | json }}</pre>
       </div>
     </div>
     <div class="modal-footer">
@@ -54,7 +56,7 @@
     </div>
   </div>
   <br>
-  <div [ngSwitch]="view">
+  <div id="tnt" [ngSwitch]="view">
     <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
       (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
     </mwl-calendar-month-view>
@@ -68,7 +70,7 @@
 
   <br>
   <br>
-  <br>
+
 
   <h3>
     Edit events
@@ -101,7 +103,7 @@
         </td>
         <td>
           <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()" [altInput]="true"
-            [convertModelValue]="false" [enableTime]="true" dateFormat="m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set">
+            [convertModelValue]="false" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set">
         </td>
         <td>
           <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end" (ngModelChange)="refresh.next()" [altInput]="true"
