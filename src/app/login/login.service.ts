@@ -9,7 +9,7 @@ import { catchError } from "rxjs/operators";
 
 @Injectable({ providedIn:"root"})
 export class LoginService {
-  heroesUrl = "http://localhost:8080/login"; // URL to web api
+  heroesUrl = "https://synchronos-java.herokuapp.com/login"; // URL to web api
 
   constructor(private http: HttpClient) {}
 
