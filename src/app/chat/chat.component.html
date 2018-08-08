@@ -17,10 +17,11 @@
           <span>
             <div class="avatar">
               <img [src]="profilePic" *ngIf="profilePic">
+              <span id="username">{{userName}}:</span>
             </div>
             <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
           </span>
-          <span id="username">{{userName}}:</span>
+
           <span id="timestamp">{{chat.timestamp}} </span>
           <!-- <span id="events"> {{Cevent.title}}</span> -->
 
@@ -42,14 +43,23 @@
       <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
       <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="Write a message..."
         aria-label="" aria-describedby="basic-addon1">
+
     </div>
+
+    <button id="toggle-groups" class="btn toggle groups" type="toggle" (click)="toggleGroups()">Groups</button>
 
     <div>
       <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
       <app-photos></app-photos>
 
 
+
+
+
     </div>
+
+
+
 
   </footer>
 
