@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
 @Injectable({ providedIn: "root" })
 export class ProfileService {
-  heroesUrl = "http://localhost:8080/profile/"; // URL to web api
+  heroesUrl = "https://synchronos-java.herokuapp.com/profile/"; // URL to web api
   constructor(private http: HttpClient) {}
 
   getProfile(id: number): Observable<any> {

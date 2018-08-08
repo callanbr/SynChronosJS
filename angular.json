@@ -21,16 +21,18 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "../synchronosjs/src/css/bootstrap-grid.css",
-              "../synchronosjs/src/css/bootstrap.css",
-              "../synchronosjs/src/css/angular-calendar.css"
+
+              "src/css/bootstrap-grid.css",
+              "src/css/bootstrap.css",
+              "src/css/angular-calendar.css"
+
             ],
             "scripts": [
-              "../synchronosjs/src/js/darkmode.js",
-              "../synchronosjs/src/js/jquery.easing.js",
-              "../synchronosjs/src/js/jquery.js",
-              "../synchronosjs/src/js/myWebsite.js",
-              "../synchronosjs/src/js/nav.js"
+              "src/js/darkmode.js",
+              "src/js/jquery.easing.js",
+              "src/js/jquery.js",
+              "src/js/myWebsite.js",
+              "src/js/nav.js"
             ]
           },
           "configurations": {

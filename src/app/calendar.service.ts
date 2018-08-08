@@ -17,20 +17,20 @@ export class CalendarService {
   
 
   addList(calendar: object) {
-    return this.http.post("http://localhost:8080/calendar", calendar);
+    return this.http.post("https://synchronos-java.herokuapp.com/calendar", calendar);
   }
 
 
   addEvent(calendar: Object) {
-    return this.http.post("http://localhost:8080/calendar", calendar);
+    return this.http.post("https://synchronos-java.herokuapp.com/calendar", calendar);
   }
 
   getEvents(profileId : number): Observable<CEvent> {
-    return this.http.get<CEvent>("http://localhost:8080/calendar/"+ profileId);
+    return this.http.get<CEvent>("https://synchronos-java.herokuapp.com/calendar/"+ profileId);
   }
 
   deleteEvents(id:number){
-  return this.http.delete("http://localhost:8080/calendar/" + id);
+  return this.http.delete("https://synchronos-java.herokuapp.com/calendar/" + id);
  }
 
   constructor(private http: HttpClient) {}
