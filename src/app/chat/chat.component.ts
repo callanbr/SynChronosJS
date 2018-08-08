@@ -63,14 +63,16 @@ export class ChatComponent implements OnInit {
   ) {}
   chats: Chat;
   currentChat: Chat = new Chat();
-  routeParameter: String;
+  routeParameter: string;
 
-  userName : string;
-  userID : number;
-  profilePic : string
+  userName: string;
+  userID: number;
+  profilePic: string;
 
   getChat() {
-    this.chatService.getChat().subscribe(c => {
+    this.routeParameter = this.route.snapshot.paramMap.get("id");
+    this.chats = null;
+    this.chatService.getChat(parseInt(this.routeParameter)).subscribe(c => {
       this.chats = c;
 
       function printSomething() {
@@ -83,14 +85,17 @@ export class ChatComponent implements OnInit {
   }
   submitChat() {
     this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
-    this.chatService.addChat(this.currentChat).subscribe(() => {
-      this.getChat();
-      this.currentChat = new Chat();
-      console.log(this.route.snapshot.paramMap.get("id"));
-    });
+    this.chatService
+      .addChat(
+        this.currentChat,
+        parseInt(this.route.snapshot.paramMap.get("id"))
+      )
+      .subscribe(() => {
+        this.getChat();
+        this.currentChat = new Chat();
+        console.log("Test:" + this.route.snapshot.paramMap.get("id"));
+      });
   }
-
-  
 
   // submitImage() {
   //   let imageChat = new Chat();
@@ -102,28 +107,35 @@ export class ChatComponent implements OnInit {
   // }
 
   ngOnInit() {
+    console.log("loading chat component");
+    // this.getProfile();
+    // this.getChat();
+    this.routeParameter = this.route.snapshot.paramMap.get("id");
+    this.route.url.subscribe(url => {
+      this.getChat();
+    });
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (currentUser != null) {
       this.userName = currentUser.name;
       this.userID = currentUser.Id;
-      this.profilePic = currentUser.image
+      this.profilePic = currentUser.image;
+    }
   }
-}
-// submitImage() {.
-//   let imageChat = new Chat();
-//   imageChat.message =
-//   this.chatService.addChat(imageChat).subscribe(() => {
-//     this.getChat();
-//     this.currentChat = new Chat();
-//   });
-// }
+  // submitImage() {.
+  //   let imageChat = new Chat();
+  //   imageChat.message =
+  //   this.chatService.addChat(imageChat).subscribe(() => {
+  //     this.getChat();
+  //     this.currentChat = new Chat();
+  //   });
+  // }
 
-// function scrolldown() {
-//   function printSomething() {
-//     setTimeout(printSomething, 1000);
+  // function scrolldown() {
+  //   function printSomething() {
+  //     setTimeout(printSomething, 1000);
 
-//     for (var i = 0; i < 10; i++) {}
-//     window.scrollTo(0, document.body.scrollHeight);
-//   }
-// }
+  //     for (var i = 0; i < 10; i++) {}
+  //     window.scrollTo(0, document.body.scrollHeight);
+  //   }
+  // }
 }

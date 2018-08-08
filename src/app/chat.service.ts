@@ -14,11 +14,12 @@ import { Http, Headers, Response } from "@angular/http";
 })
 export class ChatService {
   chats: Chat;
-  getChat(): Observable<Chat> {
-    return this.http.get<Chat>("http://localhost:8080/chat");
+  getChat(groupid: number): Observable<Chat> {
+    console.log(groupid);
+    return this.http.get<Chat>("http://localhost:8080/chat/" + groupid);
   }
 
-  addChat(chats: Chat) {
+  addChat(chats: Chat, groupid: number) {
     return this.http.post("http://localhost:8080/chat", chats);
   }
 
