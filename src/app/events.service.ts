@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 })
 export class EventsService {
   addList(name: object) {
-    return this.http.post("http://localhost:8080/events", name);
+    return this.http.post("https://synchronos-java.herokuapp.com/events", name);
   }
 
   constructor(private http: HttpClient) {}
