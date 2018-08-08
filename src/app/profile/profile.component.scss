@@ -8,6 +8,10 @@ div.light-mode {
   // padding-top: 30vmin;
   background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
   height: 100vmax;
+  h1{
+  color: #401a7e;
+  text-shadow: 2px 2px 10px #401a7ea6;
+  }
 
   
   #bottom {
@@ -39,13 +43,13 @@ div.light-mode {
     h1 {
       padding-top: 0vw;
       text-align: center;
-      #nameInput {
+      input {
         padding-top: 1vmin;
         text-align: center;
         font-size: 3.5vw;
-        font-weight: 200;
-        color: whitesmoke;
-        text-shadow: 2px 2px 5px #401a7e;
+        font-weight: 320;
+        // color: #401a7e;
+        // text-shadow: 2px 2px 10px #401a7ea6;
         margin: 0;
         background: transparent;
         border: none;

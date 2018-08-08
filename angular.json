@@ -21,9 +21,11 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
+
               "src/css/bootstrap-grid.css",
               "src/css/bootstrap.css",
               "src/css/angular-calendar.css"
+
             ],
             "scripts": [
               "src/js/darkmode.js",

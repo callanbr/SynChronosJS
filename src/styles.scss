@@ -38,6 +38,10 @@ html.light-mode {
     }
     h1 {
       color: #401a7e;
+      input{
+        color: #401a7e;
+        text-shadow: 2px 2px 10px #401a7ea6;
+      }
     }
     #settingsButton {
       border: 2px solid;
@@ -85,6 +89,10 @@ html.dark-mode {
     }
     h1 {
       color: goldenrod;
+      input{
+        color: goldenrod;
+        text-shadow: 2px 2px 10px #401a7e31;
+      }
     }
     #settingsButton {
       border: 2px solid;
@@ -93,7 +101,8 @@ html.dark-mode {
   }
   .cal-month-view .cal-cell-row .cal-cell:hover,
   .cal-month-view .cal-cell.cal-has-events.cal-open {
-    background-color: rgba(218, 165, 32, 0.692);
+
+    background-color: #401a7e3a;
   }
 }
 
