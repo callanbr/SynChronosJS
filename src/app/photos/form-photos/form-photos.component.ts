@@ -7,6 +7,10 @@ import {
 import { ChatService } from "../../chat.service";
 import { summaryFileName } from "../../../../node_modules/@angular/compiler/src/aot/util";
 import { Chat } from "../../chat";
+import {
+  ActivatedRoute,
+  ParamMap
+} from "../../../../node_modules/@angular/router";
 
 @Component({
   selector: "form-photos",
@@ -20,8 +24,10 @@ export class FormPhotosComponent implements OnInit {
   progress: { percentage: number } = { percentage: 0 };
   constructor(
     private photosService: PhotosService,
-    private chatService: ChatService
+    private chatService: ChatService,
+    private route: ActivatedRoute
   ) {}
+  routeParameter: string;
 
   ngOnInit() {}
 
@@ -35,34 +41,38 @@ export class FormPhotosComponent implements OnInit {
     }
   }
 
-  // submitImage() {
-  //   let newChat = new Chat();
-  //   newChat.message =
-  //     "<img src= 'http://localhost:8080/photos/" +
-  //     this.currentFileUpload.name +
-  //     "' height = '40'>";
-  //   this.chatService.addChat(newChat).subscribe(() => {
-  //     //this.getChat();
-  //     //this.currentChat = new Chat();
-  //   });
-  // }
+  submitImage() {
+    console.log(parseInt(this.route.snapshot.paramMap.get("id")));
+    let newChat = new Chat();
+    newChat.message =
+      "<img src= 'http://localhost:8080/photos/" +
+      this.currentFileUpload.name +
+      "' height = '180'>";
+    newChat.groupId = this.route.snapshot.paramMap.get("id");
+    this.chatService
+      .addChat(newChat, parseInt(this.route.snapshot.paramMap.get("id")))
+      .subscribe(() => {
+        // this.getChat();
+        // this.currentChat = new Chat();
+      });
+  }
 
-  // upload() {
-  //   this.progress.percentage = 0;
+  upload() {
+    this.progress.percentage = 0;
 
-  //   this.currentFileUpload = this.selectedFiles.item(0);
-  //   this.photosService
-  //     .pushFileToStorage(this.currentFileUpload)
-  //     .subscribe(event => {
-  //       if (event.type === HttpEventType.UploadProgress) {
-  //         this.progress.percentage = Math.round(
-  //           (100 * event.loaded) / event.total
-  //         );
-  //       } else if (event instanceof HttpResponse) {
-  //         console.log("File is completely uploaded!");
-  //       }
-  //     });
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.photosService
+      .pushFileToStorage(this.currentFileUpload)
+      .subscribe(event => {
+        if (event.type === HttpEventType.UploadProgress) {
+          this.progress.percentage = Math.round(
+            (100 * event.loaded) / event.total
+          );
+        } else if (event instanceof HttpResponse) {
+          console.log("File is completely uploaded!");
+        }
+      });
 
-  //   this.selectedFiles = undefined;
-  // }
+    this.selectedFiles = undefined;
+  }
 }
