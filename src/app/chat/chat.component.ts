@@ -121,14 +121,17 @@ export class ChatComponent implements OnInit {
       this.profilePic = currentUser.image;
     }
   }
-  // submitImage() {.
-  //   let imageChat = new Chat();
-  //   imageChat.message =
-  //   this.chatService.addChat(imageChat).subscribe(() => {
-  //     this.getChat();
-  //     this.currentChat = new Chat();
-  //   });
-  // }
+  submitImage() {
+    let imageChat = new Chat();
+    // let groupId = parseInt(this.route.snapshot.paramMap.get("id"));
+    imageChat.message = "bean";
+    this.chatService
+      .addChat(imageChat, parseInt(this.route.snapshot.paramMap.get("id")))
+      .subscribe(() => {
+        this.getChat();
+        this.currentChat = new Chat();
+      });
+  }
 
   // function scrolldown() {
   //   function printSomething() {
