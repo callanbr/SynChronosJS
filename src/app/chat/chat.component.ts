@@ -69,6 +69,9 @@ export class ChatComponent implements OnInit {
   userID: number;
   profilePic: string;
 
+  
+
+
   getChat() {
     this.routeParameter = this.route.snapshot.paramMap.get("id");
     this.chats = null;
@@ -83,6 +86,8 @@ export class ChatComponent implements OnInit {
       }
     });
   }
+
+
   submitChat() {
     this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
     this.chatService
@@ -120,6 +125,7 @@ export class ChatComponent implements OnInit {
       this.userID = currentUser.Id;
       this.profilePic = currentUser.image;
     }
+    setTimeout(this.getChat, 6000);
   }
   submitImage() {
     let imageChat = new Chat();
