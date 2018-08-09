@@ -6,7 +6,7 @@ import { Observable } from "rxjs/Observable";
 })
 export class PhotosService {
   addList(name: object) {
-    return this.http.post("http://localhost:8080/photos", name);
+    return this.http.post("https://synchronos-java.herokuapp.com/photos", name);
   }
 
   constructor(private http: HttpClient) {}
@@ -18,7 +18,7 @@ export class PhotosService {
 
     const req = new HttpRequest(
       "POST",
-      "http://localhost:8080/photos",
+      "https://synchronos-java.herokuapp.com/photos",
       formdata,
       {
         reportProgress: true,
@@ -30,6 +30,6 @@ export class PhotosService {
   }
 
   getFiles(): Observable<string[]> {
-    return this.http.get<string[]>("http://localhost:8080/photos");
+    return this.http.get<string[]>("https://synchronos-java.herokuapp.com/photos");
   }
 }
