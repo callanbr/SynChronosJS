@@ -89,6 +89,7 @@ export class ChatComponent implements OnInit {
 
 
   submitChat() {
+    
     this.currentChat.groupId = this.route.snapshot.paramMap.get("id");
     this.chatService
       .addChat(
@@ -126,6 +127,7 @@ export class ChatComponent implements OnInit {
       this.profilePic = currentUser.image;
     }
     setTimeout(this.getChat, 6000);
+    
   }
   submitImage() {
     let imageChat = new Chat();

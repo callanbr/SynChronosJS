@@ -3,12 +3,12 @@
     aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
     {{progress.percentage}}%</div>
 </div>
-
+<div id="formPhotos">
 <button class="btn btn-default">
   <input type="file" (change)="selectFile($event)" (change)="!selectedFiles" (change)="upload()">
 </button>
 <!-- {{currentFileUpload.name}} -->
 
-<button (click)="submitImage()">Send</button>
-
+<button id="send" (click)="submitImage()">Send</button>
+</div>
 <!-- <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button> -->

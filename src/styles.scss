@@ -8,6 +8,48 @@ html.light-mode {
   width: 100%;
   min-height: 600px;
   background: linear-gradient(rgb(228, 221, 181), rgb(248, 245, 229));
+  #groups{
+    color: #401a7e;
+    background: rgb(253, 252, 247);
+  box-shadow: 0 0 5px #401a7e77;
+  }
+  #groups:hover{
+    box-shadow: 0 0 10px #401a7e;
+    text-shadow: 0 0 4px #401a7e5e;
+  }
+  #chatAll{
+    background: rgb(253, 252, 242);
+  }
+  .list-group{
+    background-color: rgba(247, 247, 247, 0.247);
+    box-shadow: 0 0 5px #401a7e7c;
+    border-color: #e2e2e2;
+    color: black;
+  }
+  footer{
+    color: white;
+  background: rgb(253, 252, 242);
+  box-shadow: 0 0 5px #401a7e77;
+  }
+  .sidenav{
+    background: rgb(253, 252, 242);
+    box-shadow: 0 0 5px #401a7e77;
+  }
+  .sidenav .closebtn {
+    color: #401a7e; 
+  }
+  #button-addGroup {
+    color: #401a7e;
+  }
+  .list-group{
+    box-shadow: 0 0 5px #401a7e77;
+  }
+  .list-group:hover{
+    box-shadow: 0 0 5px #401a7e;
+  }
+  #gname{
+    color:#30135e !important;
+  }
   #body-cal.light-mode {
     background: linear-gradient(
       rgb(253, 252, 242),
@@ -54,11 +96,66 @@ html.light-mode {
   }
 }
 
+
+
+
 html.dark-mode {
   height: 100%;
   width: 100%;
   min-height: 600px;
   background: linear-gradient(#2e2e2e, #424242);
+  #groups{
+    color: goldenrod;
+    background: #424242;
+  box-shadow: 0 0 5px goldenrod;
+  }
+  #groups:hover{
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.616);
+    text-shadow: 0 0 4px rgba(218, 165, 32, 0.322);
+  }
+  #chatAll{
+    background: #424242;
+  }
+ 
+  .list-group{
+    background-color:#585858;
+    box-shadow: 0 0 5px rgba(218, 165, 32, 0.459);
+    // border-color: goldenrod;
+    border: none;
+    color: whitesmoke;
+  }
+  #username{
+color: goldenrod;
+  }
+  #timestamp{
+    color: goldenrod;
+  }
+  #userimg{
+    color: goldenrod;
+  }
+  footer{
+  background: #424242;
+  box-shadow: 0 0 5px goldenrod;
+  }
+  .sidenav{
+    background: #424242;
+    box-shadow: 0 0 5px goldenrod;
+  }
+  .sidenav .closebtn {
+    color: goldenrod; 
+  }
+  #button-addGroup {
+    color: goldenrod;
+  }
+  .list-group{
+    box-shadow: 0 0 5px goldenrod
+  }
+  .list-group:hover{
+    box-shadow: 0 0 10px goldenrod;
+  }
+  #gname{
+    color:goldenrod !important;
+  }
   #body-cal.light-mode {
     background: (#8f8f8fe7) !important;
   }
