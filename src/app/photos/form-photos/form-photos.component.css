@@ -1,0 +1,25 @@
+
+#formPhotos{
+    display: flex;
+    background: transparent;
+    float: right;
+    margin-top: -8px;
+    
+    
+}
+input{
+    background: transparent;
+    
+}
+.btn{
+    background: transparent;
+    margin-right: -60px;
+    
+    
+}
+    #send{
+        background-color: #e2e2e2;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom:  5px;
+    }

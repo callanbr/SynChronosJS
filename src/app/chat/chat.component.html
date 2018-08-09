@@ -1,14 +1,13 @@
-<!DoctypeHTML>
-<html id="pg">
 
-<app-groups>
+
+
+<!-- <body id="scrl"> -->
+<app-groups id="appGroup">
 
 </app-groups>
 
-<body id="scrl">
-
-
-  <div id="chatAll">
+  <div id="chatAll" class="scrollingContainer">
+      <a id="groups"  onclick="openNav()">&#9776;</a>
 
 
     <div id="chatBody" #scrollMe [scrollTop]="scrollMe.scrollHeight">
@@ -16,13 +15,14 @@
         <div>
           <span>
             <div class="avatar">
-              <img [src]="profilePic" *ngIf="profilePic">
+              <img id="userimg"[src]="profilePic" *ngIf="profilePic">
               <span id="username">{{userName}}:</span>
+              <span id="timestamp">{{chat.timestamp}} </span>
             </div>
             <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
           </span>
 
-          <span id="timestamp">{{chat.timestamp}} </span>
+         
           <!-- <span id="events"> {{Cevent.title}}</span> -->
 
 
@@ -38,7 +38,9 @@
 
 
   <footer>
-
+      <div id="appPhotos">
+      <app-photos></app-photos>
+</div>
     <div class="input-group mb-3" id="sendMessage">
       <!-- (keyup.enter)="document.getElementById('message').value = ''" -->
       <input (keyup.enter)="submitChat()" type="text" id="message" class="form-control" [(ngModel)]="currentChat.message" placeholder="Write a message..."
@@ -46,11 +48,9 @@
 
     </div>
 
-    <button id="toggle-groups" class="btn toggle groups" type="toggle" (click)="toggleGroups()">Groups</button>
-
+    
     <div>
       <button class="btn btn-outline-secondary" type="submit" (click)="submitChat()">Send</button>
-      <app-photos></app-photos>
 
 
 

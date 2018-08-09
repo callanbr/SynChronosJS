@@ -1,50 +1,68 @@
-#pg {
-  padding-right: 68px;
-  background-color: (white);
-  padding-bottom: 10%;
-  height: 100%;
-  width: 100%;
+// #pg {
+//   padding-right: 68px;
+//   background-color: transparent;
+//   padding-bottom: 10%;
+//   height: 100%;
+//   width: 100%;
+// }
+#appGroup{
+  position: relative;
+  z-index: 99 !important;
 }
+#groups{
+  position: absolute;
+  margin-top: 70px;
+  margin-left: -30px;
+  font-weight: 600;
+  border: 2px solid;
+  padding: 5px 5px 5px 30px;
+  border-radius: 10px;
+  
+  display: block;
+}
+
 #chatAll {
   font-family: "Montserrat", sans-serif;
-  width: 94%;
-  height: 87vh;
-  background-color: (#e2e2e275);
-  margin-left: 10%;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 200px;
+  min-height: 800px;
+  
   overflow: auto;
 }
 
 #chatBody {
-  padding-left: 83px;
-  padding-top: 70px;
+  margin-top: 70px;
   // padding-right: 15%;
   // overflow-y: scroll;
-  width: 100%;
-  background-color: white;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 10px;
 }
 #username {
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 10px;
+  font-weight: 600;
 }
 #timestamp {
   font-size: 10px;
+ float: right;
+  // padding-top: -30px;
+
 }
 #userimg {
   border: solid 3px;
   border-radius: 25%;
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
 }
 .list-group {
-  border-top: solid 1px;
-  border-bottom: solid 1px;
-  border-color: #e2e2e2;
-  color: black;
-  border-radius: 0px;
+ border:2px solid;
+ border-radius: 30px;
   padding: 20px;
   padding-bottom: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   margin-right: 40px;
   width: 100%;
   // background-color: #3564ff0c;
@@ -54,7 +72,7 @@
 }
 #chatMessage {
   font-size: 16px;
-  margin-left: 70px;
+  margin-left: 90px;
   margin-top: -10px;
   word-wrap: break-word;
 }
@@ -62,21 +80,13 @@
 footer {
   position: fixed;
   bottom: 0;
-  color: white;
-  // text-align: center;
-  margin-bottom: 0px;
-  // background-color: cornsilk;
-  background: linear-gradient(
-    rgba(248, 245, 229, 0.9),
-    rgba(255, 254, 249, 0.4)
-  );
+  
+  border-radius: 10px;
+  overflow: hidden;
 
-  right: 0px;
-  left: 12.5%;
-  margin-right: 0px;
-  height: 21.5%;
-  // width: 100%;
-  // background-color: #535353;
+padding: 10px;
+  width: 100%;
+  height: 180px;
   border: 3px;
 }
 #sendMessage {
@@ -86,24 +96,31 @@ footer {
   border-color: #535353;
 }
 input {
-  background-color: white;
+  background-color: rgb(224, 224, 224);
   border: solid 3px;
   border-color: #535353;
 }
 
 button {
-  margin-top: -16px;
+  margin-top: -12px;
   background-color: #e2e2e2;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   margin-right: 4px;
   float: right;
   color: #401a7e;
 }
 
-#toggle-groups {
-  position: relative;
-  float: left;
-  border-color: #535353;
-}
+// #toggle-groups {
+//   position: relative;
+//   float: left;
+//   border-color: #535353;
+// }
 
 // position: absolute;
+// span{
+//   color: black;
+// }
+#appPhotos{
+  margin-top: -20px;
+  // display: inline-flex;
+}

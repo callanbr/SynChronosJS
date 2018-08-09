@@ -1,28 +1,17 @@
-<div id="body">
+<div id="body"><div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
   <form name="makeGroup" id="makeGroup" action="http://localhost:8080/groups" method="POST">
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button class="btn btn-outline-secondary" type="submit" id="button-addGroup" (click)="submitGroup()">Add Group</button>
-      </div>
+     
 
       <input type="text" class="Group-form" placeholder="Create a Group" name="newGroup" id="newGroup" [(ngModel)]="makeGroup.groupname">
+      <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="submit" id="button-addGroup" (click)="submitGroup()"><i class='material-icons'>add</i></button>
+        </div>
     </div>
   </form>
-  <!-- <form>
-    <div>
-
-      <button class="btn btn-outline-secondary" type="submit" id="button-addGroupMember" (click)="addGroupMember()">Add Group Member</button>
-    </div>
-    <input type="text" class "Groupmember-form" placeholder="Add a group member" name="newMember" id="newMember" [(ngModel)]="addGroupMember.user">
-  </form> -->
-
   <ul>
-    <li>
-      <a routerLink='settings' [class.activated]="currentUrl == '/settings'">
-        <i class='material-icons'>add</i>
-
-      </a>
-    </li>
     <li>
       <div *ngFor="let groups of group" class="list-group">
         <div>
@@ -31,7 +20,7 @@
             <!-- <img id="userimg" src="https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"> -->
           </span>
           <span id="groupname-title">
-            <a routerLink="/chat/{{groups.id}}">{{groups.groupname}}: {{groups.id}} </a>
+            <a id="gname" routerLink="/chat/{{groups.id}}">{{groups.groupname}}</a>
           </span>
 
 
@@ -42,3 +31,14 @@
   </ul>
 
 </div>
+</div>
+
+
+
+<!-- <form>
+    <div>
+
+      <button class="btn btn-outline-secondary" type="submit" id="button-addGroupMember" (click)="addGroupMember()">Add Group Member</button>
+    </div>
+    <input type="text" class "Groupmember-form" placeholder="Add a group member" name="newMember" id="newMember" [(ngModel)]="addGroupMember.user">
+  </form> -->

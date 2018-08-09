@@ -11,11 +11,34 @@
   // opacity: 0.5;
   margin-right: 90%;
   overflow: auto;
+  
+  #newGroup{
+    background: transparent;
+    border: 2px solid;
+    border-radius: 10px;
+    margin-left: 40px;
+    width: 160px;
+    padding-left: 20px;
+  }
 
   #button-addGroup {
-    color: #401a7e;
-    background-color: #e2e2e2;
-    margin-left: 50%;
+    background-color: transparent;
+    border: none;
+    margin-left: 0;
+  }
+  .list-group{
+    // border: 2px solid;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    margin-right: 30px;
+    padding-left: 7px;
+    border-radius: 40px;
+    // background-color: #
+  }
+  .list-group:hover{
+  }
+  #gname{
+    font-weight: 600;
   }
 
   ul {
@@ -40,4 +63,32 @@
       }
     }
   }
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99 !important;
+  top: 0;
+  left: 0;
+  
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  margin-top: 67px;
+  margin-left: -30px;
+  // border: 2px solid;
+  
+  // border-color: #401a7e;
+  border-radius: 10px;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  
 }
